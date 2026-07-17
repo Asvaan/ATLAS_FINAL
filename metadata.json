@@ -1,0 +1,6 @@
+{
+  "name": "ATLAS by ParityBit",
+  "description": "Structural Threat Intelligence Platform for the Modern Threat Landscape.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

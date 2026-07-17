@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-dark: #07030f;
+  --color-brand-card: #0b0415;
+  --color-brand-surface: #120826;
+  --color-brand-border: #1d0e36;
+  --color-brand-border-light: #2a1347;
+  --color-brand-accent: #7c2dff;
+  --color-brand-accent-dim: rgba(124, 45, 255, 0.15);
+  --color-brand-danger: #EF4444;
+  --color-brand-success: #9d4eff;
+  --color-brand-warning: #F59E0B;
+  --color-brand-muted: #8674a8;
+}
+
+/* ─── Premium card glassmorphism with lift and ambient iris glow ─── */
+.card-glass {
+  background: rgba(15, 8, 30, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03) inset, 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-glass:hover {
+  background: rgba(15, 8, 30, 0.45);
+  border-color: rgba(124, 45, 255, 0.32);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset, 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(124, 45, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-hover {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  border-color: rgba(124, 45, 255, 0.3);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04) inset, 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 25px rgba(124, 45, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ─── Premium input glassmorphic focus highlights ─── */
+.input-glass {
+  background: rgba(15, 8, 30, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.input-glass:focus {
+  outline: none;
+  background: rgba(15, 8, 30, 0.55);
+  border-color: rgba(124, 45, 255, 0.5);
+  box-shadow: 0 0 20px rgba(124, 45, 255, 0.12), 0 1px 0 0 rgba(255, 255, 255, 0.03) inset;
+}
+
+/* ─── Accent glow — used sparingly on primary CTAs only ─── */
+.glow-sm {
+  box-shadow: 0 0 20px -8px rgba(124, 45, 255, 0.25);
+}
+.glow-accent {
+  box-shadow: 0 0 35px -4px rgba(124, 45, 255, 0.4);
+}
+.glow-red {
+  box-shadow: 0 0 20px -8px rgba(239, 68, 68, 0.2);
+}
+.glow-green {
+  box-shadow: 0 0 20px -8px rgba(124, 45, 255, 0.25);
+}
+
+/* ─── Legacy card gradient (used in inner components) ─── */
+.premium-card-gradient {
+  background: linear-gradient(180deg, rgba(20, 9, 41, 0.45) 0%, rgba(7, 3, 15, 0.75) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Left-border accent style for feature cards ─── */
+.feature-card {
+  border-left: 2px solid rgba(124, 45, 255, 0.4);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.feature-card:hover {
+  border-left-color: rgba(124, 45, 255, 0.85);
+}
+
+/* ─── Smooth fade-in for tab content ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeInUp 0.25s ease both;
+}
+
+/* ─── Legacy border glow (used in sub-components) ─── */
+.premium-border-glow:hover {
+  border-color: rgba(124, 45, 255, 0.2);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ─── Nav slide-down — spring easing ─── */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down {
+  animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ─── Tab transitions: permanently-mounted panels, GPU-composited only ───
+   All 5 panels stay in the DOM at all times — zero mounting cost on switch.
+   CSS Grid stacks them in the same cell. Only the active one is visible.
+   NO blur (too expensive). Only opacity + tiny scale — both GPU-composited.
+────────────────────────────────────────────────────────────────────────── */
+.tab-grid {
+  display: grid;
+  grid-template-areas: 'content';
+  align-items: start;
+}
+.tab-grid > .tab-panel {
+  grid-area: content;
+  opacity: 0;
+  transform: scale(0.992) translateY(6px);
+  pointer-events: none;
+  user-select: none;
+  transition:
+    opacity 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.tab-grid > .tab-panel.tab-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  user-select: auto;
+}
+
+/* ─── Tab bar indicator ─── */
+.tab-btn {
+  position: relative;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 10px;
+  right: 10px;
+  height: 1.5px;
+  background: var(--color-brand-accent);
+  border-radius: 99px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+.tab-btn.tab-active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+
+/* ─── Nav link hover ─── */
+.nav-link {
+  position: relative;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-link:hover { color: rgba(255,255,255,1); }
+
+/* ─── Pill primary button ─── */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #9d4eff 0%, #7c2dff 60%, #5a1fcf 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 980px;
+  transition: filter 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 0 0 1px rgba(124,45,255,0.15);
+}
+.btn-pill:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124,45,255,0.25), 0 0 0 1px rgba(124,45,255,0.2);
+}
+.btn-pill:active { transform: translateY(0); }
+
+/* ─── Ghost button ─── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 980px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-ghost:active { transform: translateY(0); }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #07030f; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.08); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124, 45, 255, 0.3); }
