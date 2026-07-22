@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Shield, Layout, Settings, Layers, EyeOff, Users, Lock, ChevronRight, Menu, X, ArrowUpRight, Check, Cpu, Grid, ArrowRight, Search, Globe } from 'lucide-react';
+import { Shield, Layout, Settings, Layers, EyeOff, Users, Lock, ChevronRight, ChevronDown, Menu, X, ArrowUpRight, Check, Cpu, Grid, ArrowRight, Search, Globe } from 'lucide-react';
 import IOCIntelligence from './components/IOCIntelligence';
 import MITREAttack from './components/MITREAttack';
 import DarkIntelligence from './components/DarkIntelligence';
@@ -87,65 +87,63 @@ export default function App() {
             {/* — Logo — */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-3 shrink-0 text-left"
-              aria-label="ATLAS home"
+              className="flex items-center gap-2.5 shrink-0 text-left"
+              aria-label="ParityBit Security Home"
             >
-              <div className="w-8 h-8 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center">
-                <Shield className="w-4 h-4 text-brand-accent" />
-              </div>
-              <div className="flex flex-col leading-none gap-[3px]">
+              {/* Isometric 3D wireframe cube icon matching the brand layout */}
+              <svg className="w-5 h-5 text-brand-accent animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ animationDuration: '4s' }}>
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 7v10l10 5V12L2 7zM22 7v10l-10 5V12l10-5z" />
+              </svg>
+              <div className="flex flex-col leading-none">
                 <span
-                  className="text-white font-semibold"
-                  style={{ fontSize: 16, letterSpacing: '-0.035em' }}
+                  className="text-white font-bold tracking-tight"
+                  style={{ fontSize: 15, fontFamily: 'Outfit, sans-serif' }}
                 >
-                  ATLAS
+                  paritybit
                 </span>
                 <span
-                  className="text-white/30 font-normal"
-                  style={{ fontSize: 10, letterSpacing: '0.03em', lineHeight: 1 }}
+                  className="text-brand-accent font-semibold tracking-wider flex items-center"
+                  style={{ fontSize: 10, fontFamily: 'Outfit, sans-serif', marginTop: '1px' }}
                 >
-                  by ParityBit Security
+                  security<span className="text-brand-accent/50 ml-0.5">&gt;</span>
                 </span>
               </div>
             </button>
 
             {/* — Desktop Links (centered) — */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-2">
               {[
-                { label: 'IOC Intel',         action: () => handleModuleNavigation('ioc') },
-                { label: 'Dark Intelligence', action: () => handleModuleNavigation('dark') },
-                { label: 'ATT&CK Matrix',     action: () => handleModuleNavigation('mitre') },
-                { label: 'Extended Intel',    action: () => handleModuleNavigation('extended') },
+                { label: 'Platform',  action: () => handleScroll('atlas-command-center') },
+                { label: 'Solutions', action: () => handleScroll('atlas-command-center') },
+                { label: 'Services',  action: () => handleScroll('atlas-command-center') },
+                { label: 'Resources', action: () => handleScroll('atlas-command-center') },
+                { label: 'Company',   action: () => handleScroll('contact-form') },
               ].map(({ label, action }) => (
                 <button
                   key={label}
                   onClick={action}
-                  className="nav-link px-3.5 py-1.5 rounded-full text-xs font-semibold hover:bg-white/5 transition-colors"
+                  className="nav-link px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/5 transition-colors flex items-center gap-1 text-white/70"
                 >
                   {label}
+                  <ChevronDown className="w-3 h-3 opacity-40" />
                 </button>
               ))}
-
-              {/* Divider */}
-              <div className="w-px h-3 bg-white/10 mx-2" />
-
-              <button
-                onClick={() => handleScroll('client-portal')}
-                className="nav-link px-3.5 py-1.5 rounded-full text-xs font-semibold hover:bg-white/5 transition-colors flex items-center gap-1.5"
-              >
-                <Lock className="w-3 h-3 opacity-50" />
-                Client Portal
-              </button>
             </div>
 
             {/* — Right actions — */}
-            <div className="hidden lg:flex items-center gap-2 shrink-0">
+            <div className="hidden lg:flex items-center gap-5 shrink-0">
+              <button
+                onClick={() => handleScroll('client-portal')}
+                className="text-xs font-semibold text-white/80 hover:text-white transition-colors"
+              >
+                Sign in
+              </button>
               <button
                 onClick={() => handleScroll('contact-form')}
-                className="btn-pill"
+                className="btn-pill flex items-center gap-1"
                 style={{ padding: '8px 18px', fontSize: 13 }}
               >
-                Request Access
+                Request briefing <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
 
@@ -169,11 +167,11 @@ export default function App() {
                 style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
               >
                 {[
-                  { label: 'IOC Intel',         action: () => handleModuleNavigation('ioc') },
-                  { label: 'Dark Intelligence', action: () => handleModuleNavigation('dark') },
-                  { label: 'ATT&CK Matrix',     action: () => handleModuleNavigation('mitre') },
-                  { label: 'Extended Intel',    action: () => handleModuleNavigation('extended') },
-                  { label: 'Client Portal',    action: () => handleScroll('client-portal') },
+                  { label: 'Platform',  action: () => { setMobileMenuOpen(false); handleScroll('atlas-command-center'); } },
+                  { label: 'Solutions', action: () => { setMobileMenuOpen(false); handleScroll('atlas-command-center'); } },
+                  { label: 'Services',  action: () => { setMobileMenuOpen(false); handleScroll('atlas-command-center'); } },
+                  { label: 'Resources', action: () => { setMobileMenuOpen(false); handleScroll('atlas-command-center'); } },
+                  { label: 'Company',   action: () => { setMobileMenuOpen(false); handleScroll('contact-form'); } },
                 ].map(({ label, action }) => (
                   <button
                     key={label}
@@ -184,13 +182,19 @@ export default function App() {
                   </button>
                 ))}
 
-                <div className="pt-4 flex flex-col gap-2.5">
+                <div className="pt-4 flex items-center justify-between gap-4 border-t border-white/5 mt-3 px-3">
+                  <button
+                    onClick={() => { setMobileMenuOpen(false); handleScroll('client-portal'); }}
+                    className="text-sm font-semibold text-white/80 hover:text-white"
+                  >
+                    Sign in
+                  </button>
                   <button
                     onClick={() => { setMobileMenuOpen(false); handleScroll('contact-form'); }}
-                    className="btn-pill w-full justify-center py-3"
-                    style={{ borderRadius: 14 }}
+                    className="btn-pill px-4 py-2.5"
+                    style={{ fontSize: 13 }}
                   >
-                    Request Access
+                    Request briefing <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
