@@ -59,15 +59,15 @@ export default function App() {
     <div className="min-h-screen bg-brand-dark text-gray-100 font-sans selection:bg-brand-accent/20 selection:text-white">
       
       {/* ── Navigation ───────────────────────────────────────────────── */}
-      <nav className="fixed top-4 md:top-6 inset-x-4 z-50 max-w-6xl mx-auto">
+      <nav className="fixed top-3 md:top-4 inset-x-3 z-50 max-w-5xl mx-auto">
         <div
           className={`w-full transition-all duration-300 ${
             mobileMenuOpen
-              ? 'rounded-[24px] bg-brand-dark border border-brand-border'
-              : 'rounded-[20px] md:rounded-full border'
+              ? 'rounded-[20px] bg-brand-dark border border-brand-border'
+              : 'rounded-[16px] md:rounded-full border'
           }`}
           style={{
-            padding: '8px 24px',
+            padding: '5px 18px',
             background: mobileMenuOpen 
               ? '#07030f' 
               : 'rgba(15, 8, 30, 0.45)',
@@ -78,32 +78,32 @@ export default function App() {
             WebkitBackdropFilter: 'blur(20px) saturate(190%)',
             boxShadow: mobileMenuOpen 
               ? 'none' 
-              : '0 1px 0 0 rgba(255, 255, 255, 0.05) inset, 0 12px 40px -10px rgba(0, 0, 0, 0.75), 0 0 40px rgba(124, 45, 255, 0.06)',
+              : '0 1px 0 0 rgba(255, 255, 255, 0.05) inset, 0 8px 30px -8px rgba(0, 0, 0, 0.75), 0 0 30px rgba(124, 45, 255, 0.05)',
           }}
         >
           {/* Main bar */}
-          <div className="h-[48px] flex items-center justify-between gap-8">
+          <div className="h-[40px] flex items-center justify-between gap-6">
 
             {/* — Logo — */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-2.5 shrink-0 text-left"
+              className="flex items-center gap-2 shrink-0 text-left"
               aria-label="ParityBit Security Home"
             >
               {/* Isometric 3D wireframe cube icon matching the brand layout */}
-              <svg className="w-5 h-5 text-brand-accent animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ animationDuration: '4s' }}>
+              <svg className="w-[18px] h-[18px] text-brand-accent animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ animationDuration: '4s' }}>
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 7v10l10 5V12L2 7zM22 7v10l-10 5V12l10-5z" />
               </svg>
               <div className="flex flex-col leading-none">
                 <span
                   className="text-white font-bold tracking-tight"
-                  style={{ fontSize: 15, fontFamily: 'Outfit, sans-serif' }}
+                  style={{ fontSize: 13.5, fontFamily: 'Outfit, sans-serif' }}
                 >
                   paritybit
                 </span>
                 <span
                   className="text-brand-accent font-semibold tracking-wider flex items-center"
-                  style={{ fontSize: 10, fontFamily: 'Outfit, sans-serif', marginTop: '1px' }}
+                  style={{ fontSize: 9, fontFamily: 'Outfit, sans-serif', marginTop: '0.5px' }}
                 >
                   security<span className="text-brand-accent/50 ml-0.5">&gt;</span>
                 </span>
@@ -111,7 +111,7 @@ export default function App() {
             </button>
 
             {/* — Desktop Links (centered) — */}
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-1.5">
               {[
                 { label: 'Platform',  action: () => handleScroll('atlas-command-center') },
                 { label: 'Solutions', action: () => handleScroll('atlas-command-center') },
@@ -122,40 +122,40 @@ export default function App() {
                 <button
                   key={label}
                   onClick={action}
-                  className="nav-link px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/5 transition-colors flex items-center gap-1 text-white/70"
+                  className="nav-link px-2.5 py-1 rounded-full text-[11px] font-semibold hover:bg-white/5 transition-colors flex items-center gap-0.5 text-white/70"
                 >
                   {label}
-                  <ChevronDown className="w-3 h-3 opacity-40" />
+                  <ChevronDown className="w-2.5 h-2.5 opacity-40" />
                 </button>
               ))}
             </div>
 
             {/* — Right actions — */}
-            <div className="hidden lg:flex items-center gap-5 shrink-0">
+            <div className="hidden lg:flex items-center gap-4 shrink-0">
               <button
                 onClick={() => handleScroll('client-portal')}
-                className="text-xs font-semibold text-white/80 hover:text-white transition-colors"
+                className="text-[11px] font-semibold text-white/80 hover:text-white transition-colors"
               >
                 Sign in
               </button>
               <button
                 onClick={() => handleScroll('contact-form')}
                 className="btn-pill flex items-center gap-1"
-                style={{ padding: '8px 18px', fontSize: 13 }}
+                style={{ padding: '6px 14px', fontSize: 11.5 }}
               >
-                Request briefing <ChevronRight className="w-3.5 h-3.5" />
+                Request briefing <ChevronRight className="w-3 h-3" />
               </button>
             </div>
 
             {/* — Mobile hamburger — */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden ml-auto p-2 -mr-2 text-white/60 hover:text-white transition-colors"
+              className="lg:hidden ml-auto p-1.5 -mr-1.5 text-white/60 hover:text-white transition-colors"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {mobileMenuOpen
-                ? <X className="w-5 h-5" />
-                : <Menu className="w-5 h-5" />}
+                ? <X className="w-4 h-4" />
+                : <Menu className="w-4 h-4" />}
             </button>
           </div>
 
@@ -163,7 +163,7 @@ export default function App() {
           {mobileMenuOpen && (
             <div className="lg:hidden animate-slide-down">
               <div
-                className="pt-4 pb-2 space-y-0.5 mt-3"
+                className="pt-3 pb-1.5 space-y-0.5 mt-2.5"
                 style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
               >
                 {[
@@ -176,25 +176,25 @@ export default function App() {
                   <button
                     key={label}
                     onClick={action}
-                    className="block w-full text-left px-3 py-3 text-[15px] text-white/70 hover:text-white hover:bg-white/5 rounded-2xl transition-all duration-200"
+                    className="block w-full text-left px-2.5 py-2.5 text-xs text-white/70 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200"
                   >
                     {label}
                   </button>
                 ))}
 
-                <div className="pt-4 flex items-center justify-between gap-4 border-t border-white/5 mt-3 px-3">
+                <div className="pt-3 flex items-center justify-between gap-3 border-t border-white/5 mt-2.5 px-2.5">
                   <button
                     onClick={() => { setMobileMenuOpen(false); handleScroll('client-portal'); }}
-                    className="text-sm font-semibold text-white/80 hover:text-white"
+                    className="text-xs font-semibold text-white/80 hover:text-white"
                   >
                     Sign in
                   </button>
                   <button
                     onClick={() => { setMobileMenuOpen(false); handleScroll('contact-form'); }}
-                    className="btn-pill px-4 py-2.5"
-                    style={{ fontSize: 13 }}
+                    className="btn-pill px-3 py-2"
+                    style={{ fontSize: 11.5 }}
                   >
-                    Request briefing <ChevronRight className="w-3.5 h-3.5" />
+                    Request briefing <ChevronRight className="w-3 h-3" />
                   </button>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export default function App() {
       </nav>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="relative pt-36 pb-20 md:pt-48 md:pb-28 overflow-hidden border-b border-brand-border">
+      <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden border-b border-brand-border">
 
         {/* Single, low-opacity green wash from top — not overpowering */}
         <div
@@ -216,28 +216,28 @@ export default function App() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
-          {/* Eyebrow — plain text label, no pill badge */}
-          <p className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-6">
-            ParityBit Security · ATLAS Platform
+          {/* Eyebrow in Winnipeg, Canada Style */}
+          <p className="text-[11px] font-semibold text-gray-500 tracking-[0.2em] uppercase mb-6 flex items-center justify-center gap-2 select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#7c2dff] animate-pulse" />
+            Winnipeg, Canada <span className="text-white/20">·</span> Next-Gen Cybersecurity
           </p>
 
-          {/* Headline — single white colour, no two-tone fade trick */}
+          {/* Headline in Playfair Display serif styling matching screenshot */}
           <h1
-            className="text-white font-semibold tracking-tight mb-5"
+            className="text-white font-display font-medium tracking-tight mb-6"
             style={{
-              fontSize: 'clamp(2.25rem, 5.5vw, 4rem)',
-              lineHeight: 1.08,
-              letterSpacing: '-0.03em',
+              fontSize: 'clamp(2.5rem, 6.5vw, 4.75rem)',
+              lineHeight: 1.06,
+              letterSpacing: '-0.02em',
             }}
           >
-            Threat Intelligence for Teams<br className="hidden sm:block" />
-            {' '}That Can't Afford to Guess
+            Cybersecurity<br />
+            that <span className="italic font-normal">actually</span> <span className="underline-glowing-purple">works.</span>
           </h1>
 
-          {/* Sub-copy — honest, direct, one colour */}
-          <p className="text-[17px] text-gray-400 leading-relaxed max-w-2xl mx-auto mb-10" style={{ letterSpacing: '-0.01em' }}>
-            ATLAS turns raw IOCs and fragmented alerts into clear, prioritized risk intelligence.
-            Built for security teams who need answers faster than attackers move.
+          {/* Sub-copy matching Winnipeg screenshot layout */}
+          <p className="text-[16px] md:text-[18px] text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10" style={{ letterSpacing: '-0.01em' }}>
+            End the cycle of cyber attacks and data breaches. Where traditional security fails, our intelligence-driven approach succeeds, protecting your data, your reputation, and your bottom line.
           </p>
 
           {/* CTA row */}
