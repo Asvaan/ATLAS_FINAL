@@ -281,9 +281,7 @@ export default function App() {
                 'IOC Reputation Feeds',
                 'MITRE ATT&CK Mappers',
                 'Dark Web Monitors',
-                'Threat Intel Dossiers',
-                'Secure Vault Exchange',
-                'On-Premise LLM Triage'
+                'Threat Intel Dossiers'
               ].map((tool) => (
                 <span 
                   key={tool}
