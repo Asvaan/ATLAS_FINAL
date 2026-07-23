@@ -52,16 +52,6 @@ export function IOCVisual() {
   );
 }
 
-export default function IOCIntelligence({ isTab = false }: IOCProps) {
-  const content = (
-    <div className="bg-[#0c0415]/60 backdrop-blur-3xl border border-white/5 hover:border-white/10 transition-colors duration-500 rounded-[2rem] p-8 md:p-12 premium-card-gradient relative overflow-hidden group shadow-2xl">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Left Side: Mockup / Feature Visual */}
-        <div className="lg:col-span-5 space-y-4">
-          <IOCVisual />
-        </div>
-
-        {/* Right Side: Marketing Copy */}
 export function IOCText() {
   return (
     <div className="space-y-6">
@@ -103,6 +93,15 @@ export function IOCText() {
     </div>
   );
 }
+
+export default function IOCIntelligence({ isTab = false }: IOCProps) {
+  const content = (
+    <div className="bg-[#0c0415]/60 backdrop-blur-3xl border border-white/5 hover:border-white/10 transition-colors duration-500 rounded-[2rem] p-8 md:p-12 premium-card-gradient relative overflow-hidden group shadow-2xl">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Left Side: Mockup / Feature Visual */}
+        <div className="lg:col-span-5 space-y-4">
+          <IOCVisual />
+        </div>
 
         {/* Right Side: Marketing Copy */}
         <div className="lg:col-span-7 space-y-6">
