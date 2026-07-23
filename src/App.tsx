@@ -355,30 +355,30 @@ export default function App() {
             </p>
           </div>
 
-          <div className="relative flex flex-col gap-12 lg:gap-24 mt-16 lg:mt-24">
+          <div className="relative mt-16 lg:mt-24 pb-12 lg:pb-32">
             
             {/* Center Timeline Stalk (Visible only on desktop) */}
             <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-transparent via-[#8b3dff]/30 to-transparent -translate-x-1/2 z-0" />
 
-            <div className="relative z-10">
+            <div className="sticky top-24 z-10 mb-[15vh] lg:mb-[35vh] transition-transform duration-700 ease-out hover:scale-[1.02]">
               <ScrollReveal>
                 <IOCIntelligence isTab={false} />
               </ScrollReveal>
             </div>
 
-            <div className="relative z-10">
+            <div className="sticky top-32 z-20 mb-[15vh] lg:mb-[35vh] transition-transform duration-700 ease-out hover:scale-[1.02]">
               <ScrollReveal>
                 <DarkIntelligence isTab={false} />
               </ScrollReveal>
             </div>
 
-            <div className="relative z-10">
+            <div className="sticky top-40 z-30 mb-[15vh] lg:mb-[35vh] transition-transform duration-700 ease-out hover:scale-[1.02]">
               <ScrollReveal>
                 <MITREAttack isTab={false} />
               </ScrollReveal>
             </div>
 
-            <div className="relative z-10">
+            <div className="sticky top-48 z-40 transition-transform duration-700 ease-out hover:scale-[1.02]">
               <ScrollReveal>
                 <ExtendedIntelligence isTab={false} />
               </ScrollReveal>
