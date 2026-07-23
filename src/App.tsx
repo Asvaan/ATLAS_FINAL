@@ -425,83 +425,69 @@ export default function App() {
 
       {/* ── Integrations ────────────────────────────────────────── */}
       <section className="relative py-28 border-b border-brand-border bg-brand-dark overflow-hidden">
-
-        {/* Ambient radial glow — sits behind the cards */}
+        {/* Ambient radial wash — sits behind the content */}
         <div
-          className="absolute pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            width: 600, height: 600,
-            top: '50%', left: '55%',
-            transform: 'translate(-50%, -50%)',
-            background: 'radial-gradient(circle, rgba(124,45,255,0.06) 0%, transparent 65%)',
-          }}
-        />
-
-        {/* Subtle dot-grid backdrop */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.04]"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)',
-            backgroundSize: '28px 28px',
+            background: 'radial-gradient(ellipse 70% 50% at 70% 50%, rgba(124,45,255,0.045) 0%, transparent 75%)',
           }}
         />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6">
-          {/* Header */}
-          <div className="text-left mb-14">
-            <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Integrations</p>
-            <h2 className="text-3xl md:text-4xl font-display font-medium text-white mb-4">
-              Where ATLAS plugs in.
-            </h2>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-lg">
-              Native connectors for the tools your team already runs. Custom integrations in 48 hours.
-            </p>
-          </div>
-
-          {/* Integration grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-            {[
-              { name: 'Splunk',       tag: 'SIEM' },
-              { name: 'Sentinel',     tag: 'SIEM' },
-              { name: 'Chronicle',    tag: 'SIEM' },
-              { name: 'CrowdStrike',  tag: 'EDR' },
-              { name: 'Elastic',      tag: 'Search' },
-              { name: 'MISP',         tag: 'TIP' },
-              { name: 'OpenCTI',      tag: 'TIP' },
-            ].map(({ name, tag }) => (
-              <div
-                key={name}
-                className="group relative rounded-2xl p-5 card-glass cursor-default"
-              >
-                {/* Active status dot */}
-                <span className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-brand-accent/60 group-hover:bg-brand-accent transition-colors" />
-
-                <p className="text-white font-semibold text-[13px] mb-1">{name}</p>
-                <p className="text-[10px] text-gray-500 uppercase tracking-[0.12em] font-medium">{tag}</p>
-              </div>
-            ))}
-
-            {/* "Request Custom" card */}
-            <div
-              className="group relative rounded-2xl p-5 border border-dashed border-brand-border-light hover:border-brand-accent/40 transition-all cursor-pointer flex flex-col justify-center"
-            >
-              <p className="text-white/50 group-hover:text-white/80 font-semibold text-[13px] transition-colors mb-1">+ Custom</p>
-              <p className="text-[10px] text-gray-600 group-hover:text-gray-400 uppercase tracking-[0.12em] font-medium transition-colors">48 hrs</p>
+          {/* Header row */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-5 text-left">
+              <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Integrations</p>
+              <h2 className="text-3xl font-display font-medium text-white mb-4">
+                Where ATLAS plugs in.
+              </h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Native connectors for the tools your team already runs. Custom integrations in 48 hours.
+              </p>
+              {/* Thin accent rule */}
+              <div className="w-12 h-[2px] rounded-full" style={{ background: 'linear-gradient(90deg, #7c2dff 0%, transparent 100%)' }} />
             </div>
-          </div>
 
-          {/* CTA row */}
-          <div className="flex items-center gap-6">
-            <button
-              onClick={() => handleScroll('contact-form')}
-              className="btn-pill"
-              style={{ padding: '11px 22px', fontSize: 13 }}
-            >
-              See ATLAS against your data <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-            <span className="hidden sm:inline text-[11px] text-gray-500 font-medium">
-              7 native · unlimited custom connectors
-            </span>
+            {/* Integration chips grid */}
+            <div className="lg:col-span-7">
+              <div className="rounded-2xl p-8 card-glass" style={{ borderLeftWidth: 0 }}>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {[
+                    { name: 'Splunk',       letter: 'S' },
+                    { name: 'Sentinel',     letter: 'Se' },
+                    { name: 'Chronicle',    letter: 'Ch' },
+                    { name: 'CrowdStrike',  letter: 'Cs' },
+                    { name: 'Elastic',      letter: 'El' },
+                    { name: 'MISP',         letter: 'Mi' },
+                    { name: 'OpenCTI',      letter: 'Oc' },
+                  ].map(({ name, letter }) => (
+                    <div
+                      key={name}
+                      className="group flex items-center gap-3 px-4 py-3.5 rounded-xl border border-brand-border bg-brand-surface/15 hover:border-brand-accent/40 hover:bg-brand-surface/35 transition-all duration-300 select-none cursor-default"
+                    >
+                      <span
+                        className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-bold tracking-tight text-brand-accent/80 group-hover:text-brand-accent transition-colors"
+                        style={{ background: 'rgba(124,45,255,0.08)', border: '1px solid rgba(124,45,255,0.12)' }}
+                      >
+                        {letter}
+                      </span>
+                      <span className="text-[13px] font-semibold text-white/80 group-hover:text-white transition-colors">{name}</span>
+                    </div>
+                  ))}
+
+                  {/* "More" indicator chip */}
+                  <div className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-dashed border-brand-border/60 bg-transparent select-none">
+                    <span
+                      className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-medium text-gray-500"
+                      style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
+                    >
+                      +
+                    </span>
+                    <span className="text-[13px] font-medium text-gray-500">48hr custom</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
