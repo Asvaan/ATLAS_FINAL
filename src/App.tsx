@@ -450,8 +450,8 @@ export default function App() {
 
             {/* Integration chips grid */}
             <div className="lg:col-span-7 relative">
-              <div className="rounded-3xl p-8 border border-[#231042] bg-gradient-to-br from-[#0f0722] to-[#07030f] shadow-2xl">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="rounded-3xl p-6 lg:p-8 border border-[#231042] bg-gradient-to-br from-[#0f0722] to-[#07030f] shadow-2xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                   {[
                     { name: 'Splunk',       letter: 'S' },
                     { name: 'Sentinel',     letter: 'Se' },
@@ -463,14 +463,14 @@ export default function App() {
                   ].map(({ name, letter }) => (
                     <div
                       key={name}
-                      className="group flex items-center gap-3 p-2 pr-3 rounded-2xl border border-[#231042] bg-[#0a0414] hover:border-brand-accent/40 hover:bg-[#120826] transition-all duration-300 select-none cursor-default"
+                      className="group flex items-center gap-2 sm:gap-3 p-2 pr-3 rounded-2xl border border-[#231042] bg-[#0a0414] hover:border-brand-accent/40 hover:bg-[#120826] transition-all duration-300 select-none cursor-default"
                     >
                       <span
                         className="shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center text-[11.5px] font-bold tracking-wide text-[#b484ff] bg-[#1a0b36] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] group-hover:text-white transition-colors"
                       >
                         {letter}
                       </span>
-                      <span className="text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors truncate">{name}</span>
+                      <span className="text-[12px] sm:text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors whitespace-nowrap">{name}</span>
                     </div>
                   ))}
                 </div>
