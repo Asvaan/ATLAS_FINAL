@@ -241,29 +241,29 @@ export default function App() {
           </p>
 
           {/* CTA row */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-3 mb-16">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4 mb-16">
             <button
               onClick={() => handleScroll('contact-form')}
-              className="btn-pill"
-              style={{ padding: '11px 22px', fontSize: 15 }}
+              className="flex items-center gap-2 bg-[#8b3dff] hover:bg-[#9b5cff] text-white rounded-full transition-all font-medium shadow-[0_0_24px_rgba(139,61,255,0.35)] hover:shadow-[0_0_32px_rgba(139,61,255,0.5)]"
+              style={{ padding: '12px 28px', fontSize: 15 }}
             >
               Request Briefing <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => handleScroll('atlas-command-center')}
-              className="btn-ghost"
-              style={{ padding: '11px 22px', fontSize: 15 }}
+              className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full transition-all font-medium backdrop-blur-sm"
+              style={{ padding: '12px 28px', fontSize: 15 }}
             >
-              See the Platform <ChevronRight className="w-4 h-4 opacity-50" />
+              See the Platform <ChevronRight className="w-4 h-4 opacity-70" />
             </button>
           </div>
 
           {/* Tool Consolidation Strip */}
           <div 
-            className="mt-16 pt-8 text-left"
+            className="mt-16 pt-8 text-left relative z-10"
             style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
           >
-            <div className="flex items-center justify-start gap-1.5 mb-5 text-[12px] font-semibold text-brand-accent tracking-[0.2em] uppercase select-none">
+            <div className="flex items-center justify-start gap-1.5 mb-5 text-[12px] font-semibold text-[#8b3dff] tracking-[0.2em] uppercase select-none">
               <span className="relative overflow-hidden h-[18px] inline-block min-w-[145px] text-left">
                 <span 
                   className="absolute left-0 right-0 flex flex-col transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -272,7 +272,7 @@ export default function App() {
                   }}
                 >
                   {synonyms.map((word) => (
-                    <span key={word} className="h-[18px] leading-[18px] block text-brand-accent">
+                    <span key={word} className="h-[18px] leading-[18px] block text-[#8b3dff]">
                       {word}
                     </span>
                   ))}
@@ -289,9 +289,9 @@ export default function App() {
               ].map((tool) => (
                 <span 
                   key={tool}
-                  className="text-[13px] text-gray-500 hover:text-white font-semibold transition-colors select-none flex items-center gap-2.5"
+                  className="text-[13px] text-gray-400 hover:text-white font-semibold transition-colors select-none flex items-center gap-2.5"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5a1fcf] animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8b3dff] animate-pulse" />
                   {tool}
                 </span>
               ))}
