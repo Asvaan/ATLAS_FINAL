@@ -310,22 +310,32 @@ export default function App() {
       {/* ── Value Proposition ──────────────────────────────────── */}
       <section className="py-20 border-b border-brand-border bg-brand-dark">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center relative">
             
-            <div className="lg:col-start-2 lg:col-span-4 pr-0 lg:pr-8">
-              <p className="text-[12px] md:text-sm font-semibold text-[#8b3dff] tracking-[0.16em] uppercase mb-4">Why ATLAS</p>
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-display font-semibold text-white leading-tight tracking-tight">
-                Context is the difference between a report and a response
+            {/* Ambient Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[#8b3dff]/10 rounded-full blur-[120px] pointer-events-none z-0" />
+
+            <div className="lg:col-start-1 lg:col-span-5 pr-0 lg:pr-8 relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#8b3dff]/10 border border-[#8b3dff]/20 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8b3dff] animate-pulse" />
+                <span className="text-[11px] font-semibold text-[#8b3dff] tracking-[0.16em] uppercase">Why ATLAS</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-display font-semibold text-white leading-[1.1] tracking-tight">
+                Context is the difference between a <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">report</span> and a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8b3dff] to-[#b785ff]">response</span>.
               </h2>
             </div>
 
-            <div className="lg:col-span-6 space-y-5 text-gray-300 text-base md:text-lg lg:text-[19px] leading-relaxed">
-              <p>
-                Security teams don't lack data. They lack the context to prioritize it. Translating raw indicators into actionable risk posture is where most platforms fall short.
-              </p>
-              <p>
-                ATLAS aggregates intelligence across threat actor clusters, dark web monitoring, and defense frameworks to model real-world business risk. The result: faster decisions with fewer analyst hours.
-              </p>
+            <div className="lg:col-span-7 relative z-10">
+              <div className="absolute -inset-1 bg-gradient-to-b from-[#8b3dff]/20 to-transparent rounded-[2rem] blur-xl opacity-50 -z-10" />
+              <div className="p-8 md:p-10 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-2xl space-y-6 text-gray-300 text-base md:text-lg lg:text-[19px] leading-relaxed">
+                <p>
+                  Security teams don't lack data. They lack the context to prioritize it. Translating raw indicators into actionable risk posture is where most platforms fall short.
+                </p>
+                <div className="h-px w-full bg-gradient-to-r from-[#8b3dff]/40 via-white/10 to-transparent" />
+                <p>
+                  ATLAS aggregates intelligence across threat actor clusters, dark web monitoring, and defense frameworks to model real-world business risk. The result: <strong className="text-white font-medium drop-shadow-md">faster decisions with fewer analyst hours.</strong>
+                </p>
+              </div>
             </div>
           </div>
         </div>
