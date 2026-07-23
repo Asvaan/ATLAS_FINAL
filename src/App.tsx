@@ -15,6 +15,7 @@ import Threads from './components/ui/Threads';
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [synonymIndex, setSynonymIndex] = useState(0);
+  const [activeFeature, setActiveFeature] = useState(0);
 
   const synonyms = ['CONSOLIDATING', 'UNIFYING', 'CONVERGING', 'INTEGRATING'];
 
@@ -332,46 +333,57 @@ export default function App() {
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-            {/* Top Row: Hero Feature (IOC Intelligence) */}
-            <div className="md:col-span-3 card-glass premium-card-gradient rounded-[2rem] p-8 md:p-12 relative overflow-hidden group shadow-2xl flex flex-col md:flex-row gap-8 items-center border border-white/5 hover:border-brand-accent/30 transition-colors duration-500">
-              <div className="w-full md:w-5/12 order-2 md:order-1 relative z-10">
-                <IOCVisual />
-              </div>
-              <div className="w-full md:w-7/12 order-1 md:order-2 relative z-10 lg:pl-10">
-                <IOCText />
-              </div>
+          <div className="mt-20 flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
+            {/* Left: Typography Index */}
+            <div className="w-full lg:w-5/12 flex flex-col justify-center">
+              {[
+                { id: 'ioc', title: 'IOC Intelligence', num: '01', Text: IOCText },
+                { id: 'dark', title: 'Dark Web Surveillance', num: '02', Text: DarkText },
+                { id: 'mitre', title: 'ATT&CK Matrix', num: '03', Text: MITREText },
+                { id: 'extended', title: 'Extended Intel', num: '04', Text: ExtendedText },
+              ].map((feature, idx) => (
+                <div 
+                  key={feature.id}
+                  onMouseEnter={() => setActiveFeature(idx)}
+                  className={`py-6 md:py-8 border-b border-brand-border/40 cursor-pointer transition-all duration-500 ease-out ${activeFeature === idx ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
+                >
+                  <div className={`flex items-center gap-4 md:gap-6 transition-transform duration-500 ease-out ${activeFeature === idx ? 'translate-x-2 md:translate-x-6' : ''}`}>
+                    <span className="text-sm md:text-lg font-mono text-brand-accent">{feature.num}</span>
+                    <h3 className={`text-2xl md:text-4xl lg:text-5xl font-display font-medium transition-colors duration-500 ${activeFeature === idx ? 'text-white' : 'text-gray-500'}`}>
+                      {feature.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Detailed Description Reveal */}
+                  <div 
+                    className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${activeFeature === idx ? 'max-h-[600px] opacity-100 mt-6 md:mt-8 translate-x-2 md:translate-x-6' : 'max-h-0 opacity-0 mt-0 translate-x-0'}`}
+                  >
+                    {/* Hide the redundant h3 and uppercase label inside the Text components since we have massive typography titles above */}
+                    <div className="[&_h3]:hidden [&_.uppercase]:hidden">
+                      <feature.Text />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Bottom Row: 3 Columns */}
-            {/* Card 1: Dark Web */}
-            <div className="card-glass rounded-[2rem] p-8 relative overflow-hidden group shadow-2xl flex flex-col justify-between border border-white/5 hover:border-brand-accent/30 transition-all duration-500 hover:-translate-y-1">
-              <div className="w-full transform transition-transform duration-500 group-hover:scale-[1.02] mb-8 relative z-10">
-                <DarkVisual />
-              </div>
-              <div className="w-full relative z-10">
-                <DarkText />
-              </div>
-            </div>
-
-            {/* Card 2: MITRE ATT&CK */}
-            <div className="card-glass rounded-[2rem] p-8 relative overflow-hidden group shadow-2xl flex flex-col justify-between border border-white/5 hover:border-brand-accent/30 transition-all duration-500 hover:-translate-y-1">
-              <div className="w-full transform transition-transform duration-500 group-hover:scale-[1.02] mb-8 relative z-10">
-                <MITREVisual />
-              </div>
-              <div className="w-full relative z-10">
-                <MITREText />
-              </div>
-            </div>
-
-            {/* Card 3: Extended Intel */}
-            <div className="card-glass rounded-[2rem] p-8 relative overflow-hidden group shadow-2xl flex flex-col justify-between border border-white/5 hover:border-brand-accent/30 transition-all duration-500 hover:-translate-y-1">
-              <div className="w-full transform transition-transform duration-500 group-hover:scale-[1.02] mb-8 relative z-10">
-                <ExtendedVisual />
-              </div>
-              <div className="w-full relative z-10">
-                <ExtendedText />
-              </div>
+            {/* Right: Dynamic Stage (Visuals) */}
+            <div className="w-full lg:w-7/12 relative min-h-[400px] md:min-h-[600px] flex items-center justify-center">
+              {[
+                { id: 'ioc', Visual: IOCVisual },
+                { id: 'dark', Visual: DarkVisual },
+                { id: 'mitre', Visual: MITREVisual },
+                { id: 'extended', Visual: ExtendedVisual },
+              ].map((feature, idx) => (
+                <div 
+                  key={feature.id}
+                  className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center ${activeFeature === idx ? 'opacity-100 scale-100 z-10 translate-y-0' : 'opacity-0 scale-95 -z-10 translate-y-8 pointer-events-none'}`}
+                >
+                  <div className="w-full max-w-2xl mx-auto flex items-center justify-center">
+                    <feature.Visual />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
