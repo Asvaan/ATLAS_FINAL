@@ -378,87 +378,186 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Platform Capabilities ──────────────────────────────── */}
-      <section className="py-20 border-b border-brand-border bg-brand-dark">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <p className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-3">Platform Capabilities</p>
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-3">
-              Built for operational depth
+      {/* ── Capabilities (What ATLAS actually does) ────────────────────────── */}
+      <section className="py-24 border-b border-brand-border bg-brand-dark">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-left mb-16">
+            <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Capabilities</p>
+            <h2 className="text-3xl md:text-4xl font-display font-medium text-white">
+              What ATLAS actually does.
             </h2>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Enterprise-grade tooling without the complexity overhead.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl p-6 feature-card card-glass">
-              <div className="text-brand-accent mb-4">
-                <Settings className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                num: '01',
+                title: 'APT & Threat Actor Attribution Engine',
+                desc: 'AI-powered IOC intelligence mapping against nation-state APTs and cybercriminal groups.'
+              },
+              {
+                num: '02',
+                title: 'Real-Time & Historical Dark Web Surveillance',
+                desc: 'Continuous monitoring of underground sources to detect data leaks, exposure, and emerging risks.'
+              },
+              {
+                num: '03',
+                title: 'Adversary-Focused Security Hardening',
+                desc: 'Actionable recommendations aligned to predicted threat actor behaviour and attack patterns.'
+              },
+              {
+                num: '04',
+                title: 'Industry-Specific Attack Matrix Intelligence',
+                desc: 'Identifies sector-targeting adversaries and maps TTPs for proactive defense.'
+              }
+            ].map(({ num, title, desc }) => (
+              <div key={num} className="rounded-2xl p-8 feature-card card-glass flex flex-col justify-between min-h-[200px]">
+                <div>
+                  <span className="text-4xl font-display font-semibold text-brand-accent/20 block mb-4">{num}</span>
+                  <h3 className="text-lg font-semibold text-white mb-2.5">{title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{desc}</p>
+                </div>
               </div>
-              <h3 className="text-base font-semibold text-white mb-2">Telemetry Integration</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Switch seamlessly from executive briefings to raw JSON payloads with confidence scores, vendor detections, and risk metrics in one view.
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Integrations ────────────────────────────────────────── */}
+      <section className="py-24 border-b border-brand-border bg-brand-dark">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5 text-left">
+              <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Integrations</p>
+              <h2 className="text-3xl font-display font-medium text-white mb-4">
+                Where ATLAS plugs in.
+              </h2>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Native connectors for the tools your team already runs. Custom integrations in 48 hours.
               </p>
             </div>
 
-            <div className="rounded-2xl p-6 feature-card card-glass">
-              <div className="text-brand-accent mb-4">
-                <Layers className="w-5 h-5" />
+            <div className="lg:col-span-7">
+              <div className="flex flex-wrap items-center justify-start gap-3">
+                {['Splunk', 'Sentinel', 'Chronicle', 'CrowdStrike', 'Elastic', 'MISP', 'OpenCTI'].map((integration) => (
+                  <div 
+                    key={integration} 
+                    className="px-5 py-3 rounded-xl bg-brand-surface/20 border border-brand-border text-white/90 font-semibold text-xs hover:border-brand-accent/40 hover:bg-brand-surface/40 transition-all select-none shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
+                  >
+                    {integration}
+                  </div>
+                ))}
               </div>
-              <h3 className="text-base font-semibold text-white mb-2">SIEM & SOAR Ready</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Forward active indicators directly to your SIEM, SOAR, or threat-sharing platform. No custom adapters or middleware required.
-              </p>
-            </div>
-
-            <div className="rounded-2xl p-6 feature-card card-glass">
-              <div className="text-brand-accent mb-4">
-                <Layout className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-semibold text-white mb-2">Exportable Reports</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Generate white-labeled, board-ready audit reports with full forensic chains of custody, downloadable in minutes, not days.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Contact ───────────────────────────────────────────── */}
+      {/* ── Quarterly Digest ────────────────────────────────────── */}
+      <section className="py-24 border-b border-brand-border bg-brand-dark">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6 text-left">
+              <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Quarterly Digest</p>
+              <h2 className="text-3xl font-display font-medium text-white mb-4">
+                Get the digest in your inbox.
+              </h2>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+                One short memo per quarter. No marketing, no tracking pixels, unsubscribe in one click.
+              </p>
+            </div>
+
+            <div className="lg:col-span-6">
+              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+                <input 
+                  type="email" 
+                  placeholder="Work email" 
+                  required 
+                  className="input-glass px-4 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none w-full shadow-inner"
+                />
+                <button 
+                  type="submit" 
+                  className="btn-pill px-6 py-3 text-xs font-semibold shrink-0"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Contact Form ────────────────────────────────────────── */}
       <ContactForm />
 
       {/* ── Footer ─────────────────────────────────────────────── */}
-      <footer className="bg-brand-dark border-t border-brand-border pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* CTA block */}
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-2xl md:text-4xl font-display font-semibold text-white tracking-tight mb-4">
-              Ready to see ATLAS in action?
-            </h2>
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
-              Schedule a demo and see how security teams use ATLAS to move from alert triage to structural risk intelligence.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button
-                onClick={() => handleScroll('contact-form')}
-                className="w-full sm:w-auto px-6 py-3 bg-brand-accent hover:bg-[#9d4eff] text-white rounded-xl font-semibold text-sm transition-colors"
-              >
-                Request a Demo
-              </button>
+      <footer className="bg-brand-dark border-t border-brand-border pt-20 pb-12">
+        <div className="max-w-5xl mx-auto px-6">
+          {/* Main Footer Links */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16 text-left">
+            <div className="col-span-2 space-y-4 pr-0 md:pr-8">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-brand-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 7v10l10 5V12L2 7zM22 7v10l-10 5V12l10-5z" />
+                </svg>
+                <span className="text-white font-bold tracking-tight text-[17px]" style={{ fontFamily: 'Outfit, sans-serif' }}>paritybit</span>
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                Cybersecurity that actually works. Evidence-first tooling and services for teams that need the signal, not the noise.
+              </p>
+              <div className="space-y-1.5 text-xs text-gray-500 pt-2 font-medium">
+                <div className="hover:text-white transition-colors">+1 (204) 963-7230</div>
+                <div className="hover:text-white transition-colors">contact@paritybitsecurity.com</div>
+                <div>Winnipeg, Canada</div>
+                <div className="flex items-center gap-1.5 text-brand-accent pt-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
+                  <span>SOCs live · 24/7</span>
+                </div>
+              </div>
             </div>
+
+            {[
+              {
+                title: 'Platform',
+                links: ['Atlas', 'Vector', 'Trace', 'ZeroPhish', 'Platform overview']
+              },
+              {
+                title: 'Solutions',
+                links: ['Financial services', 'Healthcare', 'Public sector', 'Exposure management', 'Incident response']
+              },
+              {
+                title: 'Services',
+                links: ['VAPT', 'Phishing simulation', 'Dark web monitoring', 'Cloud security', 'Compliance & risk', 'All services']
+              },
+              {
+                title: 'Resources',
+                links: ['Blog', 'Library', 'Events', 'Trust center']
+              }
+            ].map(({ title, links }) => (
+              <div key={title} className="space-y-3.5">
+                <h4 className="text-[10px] font-semibold text-white tracking-[0.16em] uppercase select-none">{title}</h4>
+                <ul className="space-y-2">
+                  {links.map((link) => (
+                    <li key={link}>
+                      <a href="#" className="text-xs text-gray-500 hover:text-white transition-colors font-medium">
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           {/* Footer bottom */}
-          <div className="border-t border-brand-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+          <div className="border-t border-brand-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 font-medium">
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-brand-accent" />
-              <span>© {new Date().getFullYear()} ParityBit Security. All rights reserved.</span>
+              <span>© 2026 ParityBit Security. Securing your data Bit-by-Bit.</span>
             </div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-gray-300 transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-gray-300 transition-colors">GDPR & PCI Compliance</a>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {['About', 'Careers', 'Contact', 'Privacy', 'Terms', 'Trust center'].map((link) => (
+                <a key={link} href="#" className="hover:text-gray-300 transition-colors">{link}</a>
+              ))}
             </div>
           </div>
         </div>
