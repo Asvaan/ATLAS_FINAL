@@ -312,14 +312,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-start-2 lg:col-span-4">
-              <p className="text-[12px] md:text-sm font-semibold text-[#8b3dff] tracking-[0.16em] uppercase mb-3">Why ATLAS</p>
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-white leading-snug">
+            <div className="lg:col-start-2 lg:col-span-4 pr-0 lg:pr-8">
+              <p className="text-[12px] md:text-sm font-semibold text-[#8b3dff] tracking-[0.16em] uppercase mb-4">Why ATLAS</p>
+              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-display font-semibold text-white leading-tight tracking-tight">
                 Context is the difference between a report and a response
               </h2>
             </div>
 
-            <div className="lg:col-span-6 space-y-4 text-gray-400 text-sm md:text-base leading-relaxed">
+            <div className="lg:col-span-6 space-y-5 text-gray-300 text-base md:text-lg lg:text-[19px] leading-relaxed">
               <p>
                 Security teams don't lack data. They lack the context to prioritize it. Translating raw indicators into actionable risk posture is where most platforms fall short.
               </p>
