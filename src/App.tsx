@@ -211,8 +211,8 @@ export default function App() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-left">
 
           {/* Eyebrow in Winnipeg, Canada Style */}
-          <p className="text-[11px] font-semibold text-gray-500 tracking-[0.2em] uppercase mb-6 flex items-center justify-start gap-2 select-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#7c2dff] animate-pulse" />
+          <p className="text-[12.5px] md:text-[13px] font-semibold text-[#8674a8] tracking-[0.15em] uppercase mb-7 flex items-center justify-start gap-2.5 select-none">
+            <span className="w-2 h-2 rounded-full bg-[#8b3dff] animate-pulse" />
             Winnipeg, Canada <span className="text-white/20">·</span> Next-Gen Cybersecurity
           </p>
 
