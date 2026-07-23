@@ -11,10 +11,10 @@ interface DarkIntelligenceProps {
 
 export default function DarkIntelligence({ isTab = false }: DarkIntelligenceProps) {
   const content = (
-    <div className="bg-brand-card border border-brand-border rounded-3xl p-6 md:p-10 premium-card-gradient animate-fadeIn">
+    <div className="bg-[#0c0415]/60 backdrop-blur-3xl border border-white/5 hover:border-white/10 transition-colors duration-500 rounded-[2rem] p-8 md:p-12 premium-card-gradient relative overflow-hidden group shadow-2xl">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Left Side: Mockup Visual */}
-        <div className="lg:col-span-5 space-y-4">
+        {/* Left Side: Mockup Visual (Now on Right on Desktop) */}
+        <div className="lg:col-span-5 lg:order-2 order-1 space-y-4">
           <div className="p-6 bg-[#07030f] border border-brand-border rounded-2xl space-y-5 relative overflow-hidden">
             {/* Ambient Accent Light */}
             <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-accent/10 rounded-full filter blur-xl" />
@@ -50,8 +50,8 @@ export default function DarkIntelligence({ isTab = false }: DarkIntelligenceProp
           </div>
         </div>
 
-        {/* Right Side: Copy */}
-        <div className="lg:col-span-7 space-y-6">
+        {/* Right Side: Copy (Now on Left on Desktop) */}
+        <div className="lg:col-span-7 lg:order-1 order-2 space-y-6">
           <div>
             <span className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-2 block">Surveillance & Alerting</span>
             <h3 className="text-2xl md:text-3xl font-display font-semibold text-white tracking-tight leading-snug">

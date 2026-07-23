@@ -11,7 +11,7 @@ interface IOCProps {
 
 export default function IOCIntelligence({ isTab = false }: IOCProps) {
   const content = (
-    <div className="bg-brand-card border border-brand-border rounded-3xl p-6 md:p-10 premium-card-gradient animate-fadeIn">
+    <div className="bg-[#0c0415]/60 backdrop-blur-3xl border border-white/5 hover:border-white/10 transition-colors duration-500 rounded-[2rem] p-8 md:p-12 premium-card-gradient relative overflow-hidden group shadow-2xl">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Side: Mockup / Feature Visual */}
         <div className="lg:col-span-5 space-y-4">
