@@ -449,8 +449,8 @@ export default function App() {
             </div>
 
             {/* Integration chips grid */}
-            <div className="lg:col-span-7">
-              <div className="rounded-2xl p-8 card-glass" style={{ borderLeftWidth: 0 }}>
+            <div className="lg:col-span-7 relative">
+              <div className="rounded-3xl p-8 border border-[#231042] bg-gradient-to-br from-[#0f0722] to-[#07030f] shadow-2xl">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {[
                     { name: 'Splunk',       letter: 'S' },
@@ -463,15 +463,14 @@ export default function App() {
                   ].map(({ name, letter }) => (
                     <div
                       key={name}
-                      className="group flex items-center gap-3 px-4 py-3.5 rounded-xl border border-brand-border bg-brand-surface/15 hover:border-brand-accent/40 hover:bg-brand-surface/35 transition-all duration-300 select-none cursor-default"
+                      className="group flex items-center gap-3 p-2 pr-3 rounded-2xl border border-[#231042] bg-[#0a0414] hover:border-brand-accent/40 hover:bg-[#120826] transition-all duration-300 select-none cursor-default"
                     >
                       <span
-                        className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-bold tracking-tight text-brand-accent/80 group-hover:text-brand-accent transition-colors"
-                        style={{ background: 'rgba(124,45,255,0.08)', border: '1px solid rgba(124,45,255,0.12)' }}
+                        className="shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center text-[11.5px] font-bold tracking-wide text-[#b484ff] bg-[#1a0b36] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] group-hover:text-white transition-colors"
                       >
                         {letter}
                       </span>
-                      <span className="text-[13px] font-semibold text-white/80 group-hover:text-white transition-colors">{name}</span>
+                      <span className="text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors truncate">{name}</span>
                     </div>
                   ))}
                 </div>
