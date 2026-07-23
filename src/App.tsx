@@ -10,7 +10,7 @@ import MITREAttack from './components/MITREAttack';
 import DarkIntelligence from './components/DarkIntelligence';
 import ExtendedIntelligence from './components/ExtendedIntelligence';
 import ContactForm from './components/ContactForm';
-import { AsciiArt } from './components/ui/neon-nebula';
+import Threads from './components/ui/Threads';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -201,25 +201,14 @@ export default function App() {
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden border-b border-brand-border">
 
-        {/* Background ASCII Art - Seamless Symmetrical Overlay */}
-        <div className="absolute inset-0 z-0 opacity-[0.2] pointer-events-none mix-blend-screen">
-          {/* Left side fading into center */}
-          <div 
-            className="absolute inset-0 w-full h-full"
-            style={{ maskImage: 'linear-gradient(to right, black 30%, transparent 70%)', WebkitMaskImage: 'linear-gradient(to right, black 30%, transparent 70%)' }}
-          >
-            <AsciiArt className="w-full h-full object-cover" />
-          </div>
-          {/* Right side fading into center (flipped) */}
-          <div 
-            className="absolute inset-0 w-full h-full"
-            style={{ maskImage: 'linear-gradient(to left, black 30%, transparent 70%)', WebkitMaskImage: 'linear-gradient(to left, black 30%, transparent 70%)' }}
-          >
-            <AsciiArt 
-              className="w-full h-full object-cover" 
-              style={{ transform: 'scaleX(-1)' }} 
-            />
-          </div>
+        {/* Background Threads Art - Seamless Interactive Overlay */}
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-auto">
+          <Threads
+            color={[0.545, 0.239, 1.0]} 
+            amplitude={1}
+            distance={0}
+            enableMouseInteraction={true}
+          />
         </div>
 
         {/* Single, low-opacity green wash from top — not overpowering */}
