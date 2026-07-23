@@ -201,14 +201,22 @@ export default function App() {
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden border-b border-brand-border">
 
-        {/* Background ASCII Art - Full Width Symmetrical */}
-        <div className="absolute inset-0 z-0 opacity-[0.2] pointer-events-none mix-blend-screen flex">
-          <div className="w-1/2 h-full overflow-hidden relative">
-            <AsciiArt className="absolute inset-0 w-full h-full object-cover object-left" />
+        {/* Background ASCII Art - Seamless Symmetrical Overlay */}
+        <div className="absolute inset-0 z-0 opacity-[0.2] pointer-events-none mix-blend-screen">
+          {/* Left side fading into center */}
+          <div 
+            className="absolute inset-0 w-full h-full"
+            style={{ maskImage: 'linear-gradient(to right, black 30%, transparent 70%)', WebkitMaskImage: 'linear-gradient(to right, black 30%, transparent 70%)' }}
+          >
+            <AsciiArt className="w-full h-full object-cover" />
           </div>
-          <div className="w-1/2 h-full overflow-hidden relative">
+          {/* Right side fading into center (flipped) */}
+          <div 
+            className="absolute inset-0 w-full h-full"
+            style={{ maskImage: 'linear-gradient(to left, black 30%, transparent 70%)', WebkitMaskImage: 'linear-gradient(to left, black 30%, transparent 70%)' }}
+          >
             <AsciiArt 
-              className="absolute inset-0 w-full h-full object-cover object-left" 
+              className="w-full h-full object-cover" 
               style={{ transform: 'scaleX(-1)' }} 
             />
           </div>
