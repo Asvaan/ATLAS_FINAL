@@ -225,13 +225,13 @@ export default function App() {
               letterSpacing: '-0.02em',
             }}
           >
-            Cybersecurity<br />
-            that <span className="italic font-normal">actually</span> <span className="underline-glowing-purple">works.</span>
+            Anticipate the<br />
+            adversary in <span className="italic font-normal">real</span> <span className="underline-glowing-purple">time.</span>
           </h1>
 
           {/* Sub-copy matching Winnipeg screenshot layout */}
           <p className="text-[16px] md:text-[18px] text-gray-400 leading-relaxed max-w-3xl mb-10" style={{ letterSpacing: '-0.01em' }}>
-            End the cycle of cyber attacks and data breaches. Where traditional security fails, our intelligence-driven approach succeeds, protecting your data, your reputation, and your bottom line.
+            ATLAS maps the modern threat landscape with precision. Unify APT attribution, dark-web surveillance, and adversary-focused hardening into a single operator view.
           </p>
 
           {/* CTA row */}
@@ -241,7 +241,7 @@ export default function App() {
               className="btn-pill"
               style={{ padding: '11px 22px', fontSize: 15 }}
             >
-              Request Access <ArrowRight className="w-4 h-4" />
+              Request Briefing <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => handleScroll('atlas-command-center')}
