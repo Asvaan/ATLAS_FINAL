@@ -5,17 +5,15 @@
 
 import { useState, useEffect } from 'react';
 import { Shield, Layout, Settings, Layers, EyeOff, Users, Lock, ChevronRight, ChevronDown, Menu, X, ArrowUpRight, Check, Cpu, Grid, ArrowRight, Search, Globe } from 'lucide-react';
-import IOCIntelligence from './components/IOCIntelligence';
-import MITREAttack from './components/MITREAttack';
-import DarkIntelligence from './components/DarkIntelligence';
-import ExtendedIntelligence from './components/ExtendedIntelligence';
+import { IOCVisual, IOCText } from './components/IOCIntelligence';
+import { MITREVisual, MITREText } from './components/MITREAttack';
+import { DarkVisual, DarkText } from './components/DarkIntelligence';
+import { ExtendedVisual, ExtendedText } from './components/ExtendedIntelligence';
 import ContactForm from './components/ContactForm';
 import Threads from './components/ui/Threads';
-import ScrollReveal from './components/ui/ScrollReveal';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'ioc' | 'dark' | 'mitre' | 'extended'>('ioc');
   const [synonymIndex, setSynonymIndex] = useState(0);
 
   const synonyms = ['CONSOLIDATING', 'UNIFYING', 'CONVERGING', 'INTEGRATING'];
@@ -27,30 +25,9 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
-  const activeModules = [
-    { id: 'ioc' as const, label: 'IOC Intel', icon: Cpu },
-    { id: 'dark' as const, label: 'Dark Intelligence', icon: EyeOff },
-    { id: 'mitre' as const, label: 'ATT&CK Matrix', icon: Grid },
-    { id: 'extended' as const, label: 'Extended Intel', icon: Search },
-  ];
-
-  const switchTab = (moduleId: typeof activeTab) => {
-    if (moduleId === activeTab) return;
-    setActiveTab(moduleId);
-  };
-
   const handleScroll = (id: string) => {
     setMobileMenuOpen(false);
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  const handleModuleNavigation = (moduleId: typeof activeTab) => {
-    switchTab(moduleId);
-    setMobileMenuOpen(false);
-    const element = document.getElementById('atlas-command-center');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -342,46 +319,66 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Command Center ─────────────────────────────────────── */}
-      <section id="atlas-command-center" className="py-20 border-b border-brand-border bg-brand-card/20">
+      {/* ── Command Center (Operational Intelligence) ──────────────────────── */}
+      <section id="atlas-command-center" className="py-20 border-b border-brand-border bg-brand-card/20 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <p className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-3">Operational Intelligence</p>
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-3">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Operational Intelligence</p>
+            <h2 className="text-3xl md:text-4xl font-display font-medium text-white mb-4">
               Unified Security Operations
             </h2>
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
               Consolidate indicator triage, active countermeasure grids, and threat group surveillance into a single workspace.
             </p>
           </div>
 
-          <div className="relative mt-16 lg:mt-24 pb-12 lg:pb-32">
-            
-            {/* Center Timeline Stalk (Visible only on desktop) */}
-            <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 w-px bg-gradient-to-b from-transparent via-[#8b3dff]/30 to-transparent -translate-x-1/2 z-0" />
-
-            <div className="sticky top-24 z-10 mb-[15vh] lg:mb-[35vh] transition-transform duration-700 ease-out hover:scale-[1.02]">
-              <ScrollReveal>
-                <IOCIntelligence isTab={false} />
-              </ScrollReveal>
+          <div className="relative">
+            {/* Section 1 */}
+            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24 mb-32 lg:mb-48">
+              {/* Left: Sticky Visual */}
+              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+                <IOCVisual />
+              </div>
+              {/* Right: Scrolling Text */}
+              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+                <IOCText />
+              </div>
             </div>
 
-            <div className="sticky top-32 z-20 mb-[15vh] lg:mb-[35vh] transition-transform duration-700 ease-out hover:scale-[1.02]">
-              <ScrollReveal>
-                <DarkIntelligence isTab={false} />
-              </ScrollReveal>
+            {/* Section 2 */}
+            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24 mb-32 lg:mb-48">
+              {/* Left: Sticky Visual */}
+              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+                <DarkVisual />
+              </div>
+              {/* Right: Scrolling Text */}
+              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+                <DarkText />
+              </div>
             </div>
 
-            <div className="sticky top-40 z-30 mb-[15vh] lg:mb-[35vh] transition-transform duration-700 ease-out hover:scale-[1.02]">
-              <ScrollReveal>
-                <MITREAttack isTab={false} />
-              </ScrollReveal>
+            {/* Section 3 */}
+            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24 mb-32 lg:mb-48">
+              {/* Left: Sticky Visual */}
+              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+                <MITREVisual />
+              </div>
+              {/* Right: Scrolling Text */}
+              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+                <MITREText />
+              </div>
             </div>
 
-            <div className="sticky top-48 z-40 transition-transform duration-700 ease-out hover:scale-[1.02]">
-              <ScrollReveal>
-                <ExtendedIntelligence isTab={false} />
-              </ScrollReveal>
+            {/* Section 4 */}
+            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24">
+              {/* Left: Sticky Visual */}
+              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+                <ExtendedVisual />
+              </div>
+              {/* Right: Scrolling Text */}
+              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+                <ExtendedText />
+              </div>
             </div>
           </div>
         </div>
