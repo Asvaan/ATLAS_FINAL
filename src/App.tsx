@@ -451,7 +451,7 @@ export default function App() {
             {/* Integration chips grid */}
             <div className="lg:col-span-7">
               <div className="rounded-2xl p-8 card-glass" style={{ borderLeftWidth: 0 }}>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {[
                     { name: 'Splunk',       letter: 'S' },
                     { name: 'Sentinel',     letter: 'Se' },
@@ -474,17 +474,6 @@ export default function App() {
                       <span className="text-[13px] font-semibold text-white/80 group-hover:text-white transition-colors">{name}</span>
                     </div>
                   ))}
-
-                  {/* "More" indicator chip */}
-                  <div className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-dashed border-brand-border/60 bg-transparent select-none">
-                    <span
-                      className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-medium text-gray-500"
-                      style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
-                    >
-                      +
-                    </span>
-                    <span className="text-[13px] font-medium text-gray-500">48hr custom</span>
-                  </div>
                 </div>
               </div>
             </div>
