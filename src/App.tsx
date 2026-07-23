@@ -9,7 +9,6 @@ import IOCIntelligence from './components/IOCIntelligence';
 import MITREAttack from './components/MITREAttack';
 import DarkIntelligence from './components/DarkIntelligence';
 import ExtendedIntelligence from './components/ExtendedIntelligence';
-import ClientPortal from './components/ClientPortal';
 import ContactForm from './components/ContactForm';
 
 export default function App() {
@@ -133,12 +132,6 @@ export default function App() {
             {/* — Right actions — */}
             <div className="hidden lg:flex items-center gap-4 shrink-0">
               <button
-                onClick={() => handleScroll('client-portal')}
-                className="text-[11px] font-semibold text-white/80 hover:text-white transition-colors"
-              >
-                Sign in
-              </button>
-              <button
                 onClick={() => handleScroll('contact-form')}
                 className="btn-pill flex items-center gap-1"
                 style={{ padding: '6px 14px', fontSize: 11.5 }}
@@ -182,13 +175,7 @@ export default function App() {
                   </button>
                 ))}
 
-                <div className="pt-3 flex items-center justify-between gap-3 border-t border-white/5 mt-2.5 px-2.5">
-                  <button
-                    onClick={() => { setMobileMenuOpen(false); handleScroll('client-portal'); }}
-                    className="text-xs font-semibold text-white/80 hover:text-white"
-                  >
-                    Sign in
-                  </button>
+                <div className="pt-3 flex items-center justify-end border-t border-white/5 mt-2.5 px-2.5">
                   <button
                     onClick={() => { setMobileMenuOpen(false); handleScroll('contact-form'); }}
                     className="btn-pill px-3 py-2"
@@ -438,8 +425,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Portal & Contact ───────────────────────────────────── */}
-      <ClientPortal />
+      {/* ── Contact ───────────────────────────────────────────── */}
       <ContactForm />
 
       {/* ── Footer ─────────────────────────────────────────────── */}
