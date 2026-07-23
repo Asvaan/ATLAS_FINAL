@@ -332,51 +332,44 @@ export default function App() {
             </p>
           </div>
 
-          <div className="relative">
-            {/* Section 1 */}
-            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24 mb-32 lg:mb-48">
-              {/* Left: Sticky Visual */}
-              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+            {/* Top Row: Hero Feature (IOC Intelligence) */}
+            <div className="md:col-span-3 card-glass premium-card-gradient rounded-[2rem] p-8 md:p-12 relative overflow-hidden group shadow-2xl flex flex-col md:flex-row gap-8 items-center border border-white/5 hover:border-brand-accent/30 transition-colors duration-500">
+              <div className="w-full md:w-5/12 order-2 md:order-1 relative z-10">
                 <IOCVisual />
               </div>
-              {/* Right: Scrolling Text */}
-              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+              <div className="w-full md:w-7/12 order-1 md:order-2 relative z-10 lg:pl-10">
                 <IOCText />
               </div>
             </div>
 
-            {/* Section 2 */}
-            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24 mb-32 lg:mb-48">
-              {/* Left: Sticky Visual */}
-              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+            {/* Bottom Row: 3 Columns */}
+            {/* Card 1: Dark Web */}
+            <div className="card-glass rounded-[2rem] p-8 relative overflow-hidden group shadow-2xl flex flex-col justify-between border border-white/5 hover:border-brand-accent/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-full transform transition-transform duration-500 group-hover:scale-[1.02] mb-8 relative z-10">
                 <DarkVisual />
               </div>
-              {/* Right: Scrolling Text */}
-              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+              <div className="w-full relative z-10">
                 <DarkText />
               </div>
             </div>
 
-            {/* Section 3 */}
-            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24 mb-32 lg:mb-48">
-              {/* Left: Sticky Visual */}
-              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+            {/* Card 2: MITRE ATT&CK */}
+            <div className="card-glass rounded-[2rem] p-8 relative overflow-hidden group shadow-2xl flex flex-col justify-between border border-white/5 hover:border-brand-accent/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-full transform transition-transform duration-500 group-hover:scale-[1.02] mb-8 relative z-10">
                 <MITREVisual />
               </div>
-              {/* Right: Scrolling Text */}
-              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+              <div className="w-full relative z-10">
                 <MITREText />
               </div>
             </div>
 
-            {/* Section 4 */}
-            <div className="flex flex-col lg:flex-row items-stretch lg:items-start relative gap-12 lg:gap-24">
-              {/* Left: Sticky Visual */}
-              <div className="lg:w-5/12 lg:sticky lg:top-[25vh]">
+            {/* Card 3: Extended Intel */}
+            <div className="card-glass rounded-[2rem] p-8 relative overflow-hidden group shadow-2xl flex flex-col justify-between border border-white/5 hover:border-brand-accent/30 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-full transform transition-transform duration-500 group-hover:scale-[1.02] mb-8 relative z-10">
                 <ExtendedVisual />
               </div>
-              {/* Right: Scrolling Text */}
-              <div className="lg:w-7/12 lg:min-h-[70vh] flex flex-col justify-center">
+              <div className="w-full relative z-10">
                 <ExtendedText />
               </div>
             </div>

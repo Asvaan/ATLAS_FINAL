@@ -60,38 +60,38 @@ export default function DarkIntelligence({ isTab = false }: DarkIntelligenceProp
         <div className="lg:col-span-7 lg:order-1 order-2 space-y-6">
 export function DarkText() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div>
-        <span className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-2 block">Surveillance & Alerting</span>
-        <h3 className="text-2xl md:text-4xl font-display font-semibold text-white tracking-tight leading-snug">
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1 block">Surveillance & Alerting</span>
+        <h3 className="text-xl md:text-2xl font-display font-semibold text-white tracking-tight leading-snug">
           Targeted Keyword Surveillance
         </h3>
-        <p className="text-gray-400 text-base md:text-lg leading-relaxed mt-4">
-          Search the entire dark web for specific corporate keywords, assets, or domain names to extract full threat actor leaks and forum records. To prevent intelligence exposure, access is strictly limited to organization administrators.
+        <p className="text-gray-400 text-sm leading-relaxed mt-2">
+          Search the entire dark web for specific corporate keywords, assets, or domain names to extract full threat actor leaks and forum records.
         </p>
       </div>
 
-      <div className="space-y-5 pt-4">
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-brand-accent/10 text-brand-accent rounded-xl shrink-0">
-            <Sparkles className="w-5 h-5" />
+      <div className="space-y-3 pt-2">
+        <div className="flex items-start gap-3">
+          <div className="p-2 bg-brand-accent/10 text-brand-accent rounded-lg shrink-0">
+            <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Isolated Admin Access</span>
-            <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Only authorized administrators can initiate queries and view threat logs related to their own organization. Search filters and telemetry records are kept strictly private and not shared globally.
+            <span className="text-xs font-semibold text-white block">Isolated Admin Access</span>
+            <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
+              Search filters and telemetry records are kept strictly private and not shared globally.
             </span>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-brand-accent/10 text-brand-accent rounded-xl shrink-0">
-            <ShieldAlert className="w-5 h-5" />
+        <div className="flex items-start gap-3">
+          <div className="p-2 bg-brand-accent/10 text-brand-accent rounded-lg shrink-0">
+            <ShieldAlert className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Deep Web Keyword Queries</span>
-            <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Deploy search filters across encrypted message channels, invite-only pastebin dumps, and closed hacker communities for active organizational mentions.
+            <span className="text-xs font-semibold text-white block">Deep Web Keyword Queries</span>
+            <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
+              Deploy search filters across encrypted message channels, invite-only pastebin dumps.
             </span>
           </div>
         </div>

@@ -66,38 +66,38 @@ export default function MITREAttack({ isTab = false }: MITREAttackProps) {
         <div className="lg:col-span-7 space-y-6">
 export function MITREText() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div>
-        <span className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-2 block">Detection Alignment</span>
-        <h3 className="text-2xl md:text-4xl font-display font-semibold text-white tracking-tight leading-snug">
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1 block">Detection Alignment</span>
+        <h3 className="text-xl md:text-2xl font-display font-semibold text-white tracking-tight leading-snug">
           Adversarial Tactic Mapping
         </h3>
-        <p className="text-gray-400 text-base md:text-lg leading-relaxed mt-4">
-          Consolidate over 10,000 adversarial strategies and execution paths in a single interface. Search for active Advanced Persistent Threats (APTs) to identify which threat groups are targeting companies in your sector.
+        <p className="text-gray-400 text-sm leading-relaxed mt-2">
+          Consolidate adversarial strategies in a single interface to identify which threat groups are targeting companies in your sector.
         </p>
       </div>
 
-      <div className="space-y-5 pt-4">
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-brand-accent/10 text-brand-accent rounded-xl shrink-0">
-            <Layout className="w-5 h-5" />
+      <div className="space-y-3 pt-2">
+        <div className="flex items-start gap-3">
+          <div className="p-2 bg-brand-accent/10 text-brand-accent rounded-lg shrink-0">
+            <Layout className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Centralized Strategy Consolidation</span>
-            <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Combine millions of fragmented threat signatures and techniques into a single, cohesive matrix display.
+            <span className="text-xs font-semibold text-white block">Strategy Consolidation</span>
+            <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
+              Combine millions of fragmented signatures into a cohesive matrix.
             </span>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-brand-accent/10 text-brand-accent rounded-xl shrink-0">
-            <Award className="w-5 h-5" />
+        <div className="flex items-start gap-3">
+          <div className="p-2 bg-brand-accent/10 text-brand-accent rounded-lg shrink-0">
+            <Award className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Adversary Attribution Searches</span>
-            <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Identify specific threat groups targeting organizations in your industry sector and examine their attack parameters.
+            <span className="text-xs font-semibold text-white block">Adversary Attribution</span>
+            <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
+              Identify specific threat groups targeting organizations in your industry.
             </span>
           </div>
         </div>

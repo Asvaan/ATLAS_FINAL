@@ -75,38 +75,38 @@ export default function ExtendedIntelligence({ isTab = false }: ExtendedProps) {
         <div className="lg:col-span-7 lg:order-1 order-2 space-y-6">
 export function ExtendedText() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <div>
-        <span className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-2 block">Extended Search</span>
-        <h3 className="text-2xl md:text-4xl font-display font-semibold text-white tracking-tight leading-snug">
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1 block">Extended Search</span>
+        <h3 className="text-xl md:text-2xl font-display font-semibold text-white tracking-tight leading-snug">
           Web & Darknet OSINT Crawler
         </h3>
-        <p className="text-gray-400 text-base md:text-lg leading-relaxed mt-4">
-          Enter target keywords or phrases to deploy recursive web crawlers. Scans hidden darknet marketplaces, pastebins, and index sites to compile structured lists of compromised assets and threat indicators.
+        <p className="text-gray-400 text-sm leading-relaxed mt-2">
+          Deploy recursive web crawlers to scan hidden darknet marketplaces, pastebins, and compile structured lists of compromised assets.
         </p>
       </div>
 
-      <div className="space-y-5 pt-4">
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-brand-accent/10 text-brand-accent rounded-xl shrink-0">
-            <Globe className="w-5 h-5" />
+      <div className="space-y-3 pt-2">
+        <div className="flex items-start gap-3">
+          <div className="p-2 bg-brand-accent/10 text-brand-accent rounded-lg shrink-0">
+            <Globe className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Multi-Layer Web Scanning</span>
-            <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Query and correlate results across standard index sites, hidden service links, and restricted code repositories.
+            <span className="text-xs font-semibold text-white block">Multi-Layer Web Scanning</span>
+            <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
+              Query standard index sites and hidden service links.
             </span>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-brand-accent/10 text-brand-accent rounded-xl shrink-0">
-            <ExternalLink className="w-5 h-5" />
+        <div className="flex items-start gap-3">
+          <div className="p-2 bg-brand-accent/10 text-brand-accent rounded-lg shrink-0">
+            <ExternalLink className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Compromised Domain Aggregation</span>
-            <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Generate structured URL and indicator reports listing exact web and host matches discovered during indexing.
+            <span className="text-xs font-semibold text-white block">Compromised Domain Aggregation</span>
+            <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
+              Generate structured URL reports for indexed host matches.
             </span>
           </div>
         </div>
