@@ -214,10 +214,10 @@ export default function App() {
           }}
         />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-left">
 
           {/* Eyebrow in Winnipeg, Canada Style */}
-          <p className="text-[11px] font-semibold text-gray-500 tracking-[0.2em] uppercase mb-6 flex items-center justify-center gap-2 select-none">
+          <p className="text-[11px] font-semibold text-gray-500 tracking-[0.2em] uppercase mb-6 flex items-center justify-start gap-2 select-none">
             <span className="w-1.5 h-1.5 rounded-full bg-[#7c2dff] animate-pulse" />
             Winnipeg, Canada <span className="text-white/20">·</span> Next-Gen Cybersecurity
           </p>
@@ -236,12 +236,12 @@ export default function App() {
           </h1>
 
           {/* Sub-copy matching Winnipeg screenshot layout */}
-          <p className="text-[16px] md:text-[18px] text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10" style={{ letterSpacing: '-0.01em' }}>
+          <p className="text-[16px] md:text-[18px] text-gray-400 leading-relaxed max-w-3xl mb-10" style={{ letterSpacing: '-0.01em' }}>
             End the cycle of cyber attacks and data breaches. Where traditional security fails, our intelligence-driven approach succeeds, protecting your data, your reputation, and your bottom line.
           </p>
 
           {/* CTA row */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-3 mb-16">
             <button
               onClick={() => handleScroll('contact-form')}
               className="btn-pill"
@@ -260,11 +260,11 @@ export default function App() {
 
           {/* Tool Consolidation Strip */}
           <div 
-            className="mt-16 pt-8 text-center"
+            className="mt-16 pt-8 text-left"
             style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
           >
-            <div className="flex items-center justify-center gap-1.5 mb-5 text-[12px] font-semibold text-brand-accent tracking-[0.2em] uppercase select-none">
-              <span className="relative overflow-hidden h-[18px] inline-block min-w-[145px] text-right">
+            <div className="flex items-center justify-start gap-1.5 mb-5 text-[12px] font-semibold text-brand-accent tracking-[0.2em] uppercase select-none">
+              <span className="relative overflow-hidden h-[18px] inline-block min-w-[145px] text-left">
                 <span 
                   className="absolute left-0 right-0 flex flex-col transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
                   style={{
@@ -280,7 +280,7 @@ export default function App() {
               </span>
               <span className="text-gray-400">10+ Legacy Security Tools</span>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 max-w-3xl mx-auto">
+            <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-3 max-w-3xl">
               {[
                 'IOC Reputation Feeds',
                 'MITRE ATT&CK Mappers',
