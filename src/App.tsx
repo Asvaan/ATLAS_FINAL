@@ -435,8 +435,8 @@ export default function App() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           {/* Header row */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-5 text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="lg:col-span-4 text-left">
               <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Integrations</p>
               <h2 className="text-3xl font-display font-medium text-white mb-4">
                 Where ATLAS plugs in.
@@ -449,9 +449,9 @@ export default function App() {
             </div>
 
             {/* Integration chips grid */}
-            <div className="lg:col-span-7 relative">
+            <div className="lg:col-span-8 relative">
               <div className="rounded-3xl p-6 lg:p-8 border border-[#231042] bg-gradient-to-br from-[#0f0722] to-[#07030f] shadow-2xl">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
                     { name: 'Splunk',       letter: 'S' },
                     { name: 'Sentinel',     letter: 'Se' },
@@ -463,14 +463,14 @@ export default function App() {
                   ].map(({ name, letter }) => (
                     <div
                       key={name}
-                      className="group flex items-center gap-2 sm:gap-3 p-2 pr-3 rounded-2xl border border-[#231042] bg-[#0a0414] hover:border-brand-accent/40 hover:bg-[#120826] transition-all duration-300 select-none cursor-default"
+                      className="group flex items-center gap-2 p-1.5 pr-3 rounded-2xl border border-[#231042] bg-[#0a0414] hover:border-brand-accent/40 hover:bg-[#120826] transition-all duration-300 select-none cursor-default min-w-0"
                     >
                       <span
-                        className="shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center text-[11.5px] font-bold tracking-wide text-[#b484ff] bg-[#1a0b36] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] group-hover:text-white transition-colors"
+                        className="shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center text-[11px] font-bold tracking-wide text-[#b484ff] bg-[#1a0b36] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] group-hover:text-white transition-colors"
                       >
                         {letter}
                       </span>
-                      <span className="text-[12px] sm:text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors whitespace-nowrap">{name}</span>
+                      <span className="text-[12px] sm:text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors whitespace-nowrap overflow-visible">{name}</span>
                     </div>
                   ))}
                 </div>
