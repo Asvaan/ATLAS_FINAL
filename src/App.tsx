@@ -225,13 +225,13 @@ export default function App() {
               letterSpacing: '-0.02em',
             }}
           >
-            Anticipate the<br />
-            adversary in <span className="italic font-normal">real</span> <span className="underline-glowing-purple">time.</span>
+            Know your adversary.<br />
+            Defend with <span className="italic font-normal">absolute</span> <span className="underline-glowing-purple">confidence.</span>
           </h1>
 
           {/* Sub-copy matching Winnipeg screenshot layout */}
           <p className="text-[16px] md:text-[18px] text-gray-400 leading-relaxed max-w-3xl mb-10" style={{ letterSpacing: '-0.01em' }}>
-            ATLAS maps the modern threat landscape with precision. Unify APT attribution, dark-web surveillance, and adversary-focused hardening into a single operator view.
+            ATLAS unifies threat intelligence, dark web surveillance, IOC analysis, and MITRE ATT&CK mapping into a single platform. This empowers security teams to identify, prioritize, and respond to threats before they become incidents.
           </p>
 
           {/* CTA row */}
