@@ -81,36 +81,37 @@ export default function App() {
           }}
         >
           {/* Main bar */}
-          <div className="h-[40px] flex items-center justify-between gap-6">
+          {/* Main bar */}
+          <div className="h-[48px] flex items-center justify-between gap-6 px-1 lg:px-2">
 
             {/* — Logo — */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-2 shrink-0 text-left"
+              className="flex items-center gap-2.5 shrink-0 text-left"
               aria-label="ParityBit Security Home"
             >
               {/* Isometric 3D wireframe cube icon matching the brand layout */}
-              <svg className="w-[18px] h-[18px] text-brand-accent animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ animationDuration: '4s' }}>
+              <svg className="w-[20px] h-[20px] text-[#8b3dff] animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ animationDuration: '4s' }}>
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 7v10l10 5V12L2 7zM22 7v10l-10 5V12l10-5z" />
               </svg>
               <div className="flex flex-col leading-none">
                 <span
                   className="text-white font-bold tracking-tight"
-                  style={{ fontSize: 13.5, fontFamily: 'Outfit, sans-serif' }}
+                  style={{ fontSize: 14.5, fontFamily: 'Outfit, sans-serif' }}
                 >
                   paritybit
                 </span>
                 <span
-                  className="text-brand-accent font-semibold tracking-wider flex items-center"
-                  style={{ fontSize: 9, fontFamily: 'Outfit, sans-serif', marginTop: '0.5px' }}
+                  className="text-[#8b3dff] font-semibold tracking-wider flex items-center"
+                  style={{ fontSize: 9.5, fontFamily: 'Outfit, sans-serif', marginTop: '0.5px' }}
                 >
-                  security<span className="text-brand-accent/50 ml-0.5">&gt;</span>
+                  security<span className="text-[#8b3dff]/60 ml-0.5">&gt;</span>
                 </span>
               </div>
             </button>
 
             {/* — Desktop Links (centered) — */}
-            <div className="hidden lg:flex items-center gap-1.5">
+            <div className="hidden lg:flex items-center gap-7">
               {[
                 { label: 'Platform',  action: () => handleScroll('atlas-command-center') },
                 { label: 'Solutions', action: () => handleScroll('atlas-command-center') },
@@ -121,22 +122,28 @@ export default function App() {
                 <button
                   key={label}
                   onClick={action}
-                  className="nav-link px-2.5 py-1 rounded-full text-[11px] font-semibold hover:bg-white/5 transition-colors flex items-center gap-0.5 text-white/70"
+                  className="text-[13.5px] font-medium text-white/80 hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   {label}
-                  <ChevronDown className="w-2.5 h-2.5 opacity-40" />
+                  <ChevronDown className="w-3 h-3 opacity-50" />
                 </button>
               ))}
             </div>
 
             {/* — Right actions — */}
-            <div className="hidden lg:flex items-center gap-4 shrink-0">
+            <div className="hidden lg:flex items-center gap-7 shrink-0">
+              <button
+                onClick={() => {}}
+                className="text-[13.5px] font-medium text-white/90 hover:text-white transition-colors"
+              >
+                Sign in
+              </button>
               <button
                 onClick={() => handleScroll('contact-form')}
-                className="btn-pill flex items-center gap-1"
-                style={{ padding: '6px 14px', fontSize: 11.5 }}
+                className="flex items-center gap-1.5 bg-[#8b3dff] hover:bg-[#9b5cff] text-white rounded-full transition-all font-medium shadow-[0_0_24px_rgba(139,61,255,0.35)] hover:shadow-[0_0_32px_rgba(139,61,255,0.5)]"
+                style={{ padding: '8px 22px', fontSize: 13.5 }}
               >
-                Request briefing <ChevronRight className="w-3 h-3" />
+                Request briefing <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
 
