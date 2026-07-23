@@ -10,6 +10,7 @@ import MITREAttack from './components/MITREAttack';
 import DarkIntelligence from './components/DarkIntelligence';
 import ExtendedIntelligence from './components/ExtendedIntelligence';
 import ContactForm from './components/ContactForm';
+import { AsciiArt } from './components/ui/neon-nebula';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -199,6 +200,11 @@ export default function App() {
 
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden border-b border-brand-border">
+
+        {/* Background ASCII Art */}
+        <div className="absolute inset-0 z-0 opacity-[0.15] pointer-events-none mix-blend-screen">
+          <AsciiArt className="w-full h-full object-cover" />
+        </div>
 
         {/* Single, low-opacity green wash from top — not overpowering */}
         <div
