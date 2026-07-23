@@ -5,10 +5,10 @@
 
 import { useState, useEffect } from 'react';
 import { Shield, Layout, Settings, Layers, EyeOff, Users, Lock, ChevronRight, ChevronDown, Menu, X, ArrowUpRight, Check, Cpu, Grid, ArrowRight, Search, Globe } from 'lucide-react';
-import { IOCVisual, IOCText } from './components/IOCIntelligence';
-import { MITREVisual, MITREText } from './components/MITREAttack';
-import { DarkVisual, DarkText } from './components/DarkIntelligence';
-import { ExtendedVisual, ExtendedText } from './components/ExtendedIntelligence';
+import IOCIntelligence, { IOCVisual, IOCText } from './components/IOCIntelligence';
+import MITREAttack, { MITREVisual, MITREText } from './components/MITREAttack';
+import DarkIntelligence, { DarkVisual, DarkText } from './components/DarkIntelligence';
+import ExtendedIntelligence, { ExtendedVisual, ExtendedText } from './components/ExtendedIntelligence';
 import ContactForm from './components/ContactForm';
 import Threads from './components/ui/Threads';
 
