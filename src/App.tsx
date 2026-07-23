@@ -334,8 +334,8 @@ export default function App() {
           </div>
 
           <div className="mt-20 flex flex-col lg:flex-row gap-16 relative z-10">
-            {/* Left: Typography Index */}
-            <div className="w-full lg:w-4/12 flex flex-col justify-center border-l border-brand-border/40 pl-8">
+            {/* Left: Sleek Navigation Menu */}
+            <div className="w-full lg:w-4/12 flex flex-col justify-center gap-3">
               {[
                 { id: 'ioc', title: 'IOC Intelligence', num: '01' },
                 { id: 'dark', title: 'Dark Web Surveillance', num: '02' },
@@ -345,14 +345,17 @@ export default function App() {
                 <div 
                   key={feature.id}
                   onMouseEnter={() => setActiveFeature(idx)}
-                  className={`py-8 cursor-pointer transition-all duration-500 ease-out relative`}
+                  className={`px-6 py-5 cursor-pointer rounded-2xl transition-all duration-300 ease-out relative overflow-hidden group ${
+                    activeFeature === idx 
+                      ? 'bg-brand-accent/10 border border-brand-accent/20 shadow-[0_0_20px_rgba(111,66,193,0.1)]' 
+                      : 'border border-transparent hover:bg-white/5'
+                  }`}
                 >
-                  {/* Active Indicator Line */}
-                  <div className={`absolute left-[-33px] top-0 bottom-0 w-[2px] bg-brand-accent transition-all duration-500 ${activeFeature === idx ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`} />
-                  
-                  <div className={`flex flex-col gap-2 transition-transform duration-500 ease-out ${activeFeature === idx ? 'translate-x-4' : ''}`}>
-                    <span className="text-sm font-mono text-brand-accent/80 tracking-wider">{feature.num}</span>
-                    <h3 className={`text-3xl md:text-4xl font-display font-medium transition-colors duration-500 ${activeFeature === idx ? 'text-white' : 'text-gray-500'}`}>
+                  <div className={`flex flex-col gap-1.5 transition-transform duration-300 ease-out ${activeFeature === idx ? 'translate-x-1' : ''}`}>
+                    <span className={`text-xs font-mono tracking-[0.2em] uppercase font-semibold ${activeFeature === idx ? 'text-brand-accent' : 'text-gray-500 group-hover:text-gray-400'}`}>
+                      {feature.num}
+                    </span>
+                    <h3 className={`text-lg md:text-xl font-medium tracking-tight ${activeFeature === idx ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
                       {feature.title}
                     </h3>
                   </div>

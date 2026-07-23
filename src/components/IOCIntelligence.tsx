@@ -56,11 +56,11 @@ export function IOCText() {
   return (
     <div className="space-y-6">
       <div>
-        <span className="text-sm font-semibold text-brand-accent tracking-[0.16em] uppercase mb-2 block">Feature Spotlight</span>
-        <h3 className="text-2xl md:text-4xl font-display font-semibold text-white tracking-tight leading-snug">
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Feature Spotlight</span>
+        <h3 className="text-2xl md:text-3xl font-sans font-semibold text-white tracking-tight leading-snug">
           Unrestricted Indicator Triage
         </h3>
-        <p className="text-gray-400 text-base md:text-lg leading-relaxed mt-4">
+        <p className="text-gray-400 text-sm md:text-base leading-relaxed mt-3">
           Scan hashes, IP addresses, and domains without volume limits. ATLAS traverses global intelligence feeds and local threat vaults to determine indicator reputation and map payload execution risks.
         </p>
       </div>

@@ -51,11 +51,11 @@ export function DarkText() {
   return (
     <div className="space-y-4">
       <div>
-        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1 block">Surveillance & Alerting</span>
-        <h3 className="text-xl md:text-2xl font-display font-semibold text-white tracking-tight leading-snug">
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Surveillance & Alerting</span>
+        <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
           Targeted Keyword Surveillance
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed mt-2">
+        <p className="text-gray-400 text-sm leading-relaxed mt-3">
           Search the entire dark web for specific corporate keywords, assets, or domain names to extract full threat actor leaks and forum records.
         </p>
       </div>

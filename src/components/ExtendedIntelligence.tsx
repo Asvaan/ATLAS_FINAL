@@ -66,11 +66,11 @@ export function ExtendedText() {
   return (
     <div className="space-y-4">
       <div>
-        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1 block">Extended Search</span>
-        <h3 className="text-xl md:text-2xl font-display font-semibold text-white tracking-tight leading-snug">
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Extended Search</span>
+        <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
           Web & Darknet OSINT Crawler
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed mt-2">
+        <p className="text-gray-400 text-sm leading-relaxed mt-3">
           Deploy recursive web crawlers to scan hidden darknet marketplaces, pastebins, and compile structured lists of compromised assets.
         </p>
       </div>
