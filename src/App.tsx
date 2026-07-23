@@ -333,54 +333,47 @@ export default function App() {
             </p>
           </div>
 
-          <div className="mt-20 flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
+          <div className="mt-20 flex flex-col lg:flex-row gap-16 relative z-10">
             {/* Left: Typography Index */}
-            <div className="w-full lg:w-5/12 flex flex-col justify-center">
+            <div className="w-full lg:w-4/12 flex flex-col justify-center border-l border-brand-border/40 pl-8">
               {[
-                { id: 'ioc', title: 'IOC Intelligence', num: '01', Text: IOCText },
-                { id: 'dark', title: 'Dark Web Surveillance', num: '02', Text: DarkText },
-                { id: 'mitre', title: 'ATT&CK Matrix', num: '03', Text: MITREText },
-                { id: 'extended', title: 'Extended Intel', num: '04', Text: ExtendedText },
+                { id: 'ioc', title: 'IOC Intelligence', num: '01' },
+                { id: 'dark', title: 'Dark Web Surveillance', num: '02' },
+                { id: 'mitre', title: 'ATT&CK Matrix', num: '03' },
+                { id: 'extended', title: 'Extended Intel', num: '04' },
               ].map((feature, idx) => (
                 <div 
                   key={feature.id}
                   onMouseEnter={() => setActiveFeature(idx)}
-                  className={`py-6 md:py-8 border-b border-brand-border/40 cursor-pointer transition-all duration-500 ease-out ${activeFeature === idx ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
+                  className={`py-8 cursor-pointer transition-all duration-500 ease-out relative`}
                 >
-                  <div className={`flex items-center gap-4 md:gap-6 transition-transform duration-500 ease-out ${activeFeature === idx ? 'translate-x-2 md:translate-x-6' : ''}`}>
-                    <span className="text-sm md:text-lg font-mono text-brand-accent">{feature.num}</span>
-                    <h3 className={`text-2xl md:text-4xl lg:text-5xl font-display font-medium transition-colors duration-500 ${activeFeature === idx ? 'text-white' : 'text-gray-500'}`}>
+                  {/* Active Indicator Line */}
+                  <div className={`absolute left-[-33px] top-0 bottom-0 w-[2px] bg-brand-accent transition-all duration-500 ${activeFeature === idx ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`} />
+                  
+                  <div className={`flex flex-col gap-2 transition-transform duration-500 ease-out ${activeFeature === idx ? 'translate-x-4' : ''}`}>
+                    <span className="text-sm font-mono text-brand-accent/80 tracking-wider">{feature.num}</span>
+                    <h3 className={`text-3xl md:text-4xl font-display font-medium transition-colors duration-500 ${activeFeature === idx ? 'text-white' : 'text-gray-500'}`}>
                       {feature.title}
                     </h3>
-                  </div>
-                  
-                  {/* Detailed Description Reveal */}
-                  <div 
-                    className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${activeFeature === idx ? 'max-h-[600px] opacity-100 mt-6 md:mt-8 translate-x-2 md:translate-x-6' : 'max-h-0 opacity-0 mt-0 translate-x-0'}`}
-                  >
-                    {/* Hide the redundant h3 and uppercase label inside the Text components since we have massive typography titles above */}
-                    <div className="[&_h3]:hidden [&_.uppercase]:hidden">
-                      <feature.Text />
-                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Right: Dynamic Stage (Visuals) */}
-            <div className="w-full lg:w-7/12 relative min-h-[400px] md:min-h-[600px] flex items-center justify-center">
+            {/* Right: Dynamic Stage (Full Cards) */}
+            <div className="w-full lg:w-8/12 relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center">
               {[
-                { id: 'ioc', Visual: IOCVisual },
-                { id: 'dark', Visual: DarkVisual },
-                { id: 'mitre', Visual: MITREVisual },
-                { id: 'extended', Visual: ExtendedVisual },
+                { id: 'ioc', Component: IOCIntelligence },
+                { id: 'dark', Component: DarkIntelligence },
+                { id: 'mitre', Component: MITREAttack },
+                { id: 'extended', Component: ExtendedIntelligence },
               ].map((feature, idx) => (
                 <div 
                   key={feature.id}
                   className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center ${activeFeature === idx ? 'opacity-100 scale-100 z-10 translate-y-0' : 'opacity-0 scale-95 -z-10 translate-y-8 pointer-events-none'}`}
                 >
-                  <div className="w-full max-w-2xl mx-auto flex items-center justify-center">
-                    <feature.Visual />
+                  <div className="w-full h-full flex flex-col justify-center">
+                    <feature.Component isTab={true} />
                   </div>
                 </div>
               ))}
