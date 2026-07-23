@@ -11,6 +11,7 @@ import DarkIntelligence from './components/DarkIntelligence';
 import ExtendedIntelligence from './components/ExtendedIntelligence';
 import ContactForm from './components/ContactForm';
 import Threads from './components/ui/Threads';
+import ScrollReveal from './components/ui/ScrollReveal';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -354,54 +355,22 @@ export default function App() {
             </p>
           </div>
 
-          {/* Tab bar — sliding indicator style */}
-          <div
-            className="mb-8 flex flex-wrap justify-center gap-1 pb-6"
-            style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
-          >
-            {activeModules.map((mod) => {
-              const Icon = mod.icon;
-              const isActive = activeTab === mod.id;
-              return (
-                <button
-                  key={mod.id}
-                  onClick={() => switchTab(mod.id)}
-                  className={`tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm transition-all duration-250 ${
-                    isActive
-                      ? 'tab-active text-white bg-white/5'
-                      : 'text-gray-500 hover:text-gray-300 hover:bg-white/[0.03]'
-                  }`}
-                >
-                  <Icon
-                    className={`w-3.5 h-3.5 transition-colors duration-250 ${
-                      isActive ? 'text-brand-accent' : 'text-gray-600'
-                    }`}
-                  />
-                  {mod.label}
-                </button>
-              );
-            })}
-          </div>
+          <div className="flex flex-col gap-12 mt-16">
+            <ScrollReveal>
+              <IOCIntelligence isTab={false} />
+            </ScrollReveal>
 
-          {/* All 5 modules always mounted — CSS transition controls visibility */}
-          <div className="tab-grid">
+            <ScrollReveal>
+              <DarkIntelligence isTab={false} />
+            </ScrollReveal>
 
-            <div className={`tab-panel${activeTab === 'ioc' ? ' tab-visible' : ''}`}>
-              <IOCIntelligence isTab={true} />
-            </div>
+            <ScrollReveal>
+              <MITREAttack isTab={false} />
+            </ScrollReveal>
 
-            <div className={`tab-panel${activeTab === 'dark' ? ' tab-visible' : ''}`}>
-              <DarkIntelligence isTab={true} />
-            </div>
-
-            <div className={`tab-panel${activeTab === 'mitre' ? ' tab-visible' : ''}`}>
-              <MITREAttack isTab={true} />
-            </div>
-
-            <div className={`tab-panel${activeTab === 'extended' ? ' tab-visible' : ''}`}>
-              <ExtendedIntelligence isTab={true} />
-            </div>
-
+            <ScrollReveal>
+              <ExtendedIntelligence isTab={false} />
+            </ScrollReveal>
           </div>
         </div>
       </section>
