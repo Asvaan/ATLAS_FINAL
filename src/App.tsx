@@ -201,9 +201,17 @@ export default function App() {
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-24 overflow-hidden border-b border-brand-border">
 
-        {/* Background ASCII Art */}
-        <div className="absolute inset-0 z-0 opacity-[0.15] pointer-events-none mix-blend-screen">
-          <AsciiArt className="w-full h-full object-cover" />
+        {/* Background ASCII Art - Full Width Symmetrical */}
+        <div className="absolute inset-0 z-0 opacity-[0.2] pointer-events-none mix-blend-screen flex">
+          <div className="w-1/2 h-full overflow-hidden relative">
+            <AsciiArt className="absolute inset-0 w-full h-full object-cover object-left" />
+          </div>
+          <div className="w-1/2 h-full overflow-hidden relative">
+            <AsciiArt 
+              className="absolute inset-0 w-full h-full object-cover object-left" 
+              style={{ transform: 'scaleX(-1)' }} 
+            />
+          </div>
         </div>
 
         {/* Single, low-opacity green wash from top — not overpowering */}
