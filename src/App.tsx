@@ -320,64 +320,119 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Command Center (Operational Intelligence) ──────────────────────── */}
-      <section id="atlas-command-center" className="py-20 border-b border-brand-border bg-brand-card/20 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Operational Intelligence</p>
-            <h2 className="text-3xl md:text-4xl font-display font-medium text-white mb-4">
-              Unified Security Operations
+      {/* ── Operational Intelligence — THE CENTREPIECE ──────────────────────── */}
+      <section id="atlas-command-center" className="relative overflow-hidden border-b border-brand-border" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,61,255,0.12) 0%, transparent 70%), #07030f' }}>
+        {/* Background grid */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(139,61,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(139,61,255,0.5) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        {/* Top glow beam */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[2px] bg-gradient-to-r from-transparent via-brand-accent to-transparent opacity-60" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[120px] bg-brand-accent/10 blur-3xl rounded-full" />
+
+        <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-16">
+
+          {/* Section Header — oversized, commanding */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
+              <span className="text-xs font-mono font-semibold text-brand-accent tracking-[0.2em] uppercase">Operational Intelligence</span>
+            </div>
+
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-white tracking-tight leading-[1.05] mb-6">
+              One platform.
+              <br />
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #c084fc 0%, #8b3dff 50%, #6d28d9 100%)' }}>
+                Every threat answered.
+              </span>
             </h2>
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-              Consolidate indicator triage, active countermeasure grids, and threat group surveillance into a single workspace.
+            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+              ATLAS replaces 10+ fragmented security tools. Triage IOCs, surveil the dark web, map adversarial TTPs, and run deep OSINT crawls — all from a single unified workspace.
             </p>
           </div>
 
-          <div className="mt-20 flex flex-col lg:flex-row gap-16 relative z-10">
-            {/* Left: Sleek Navigation Menu */}
-            <div className="w-full lg:w-4/12 flex flex-col justify-center gap-3">
+          {/* Main Interactive Stage */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+
+            {/* Left Nav — vertical feature selector */}
+            <div className="w-full lg:w-[300px] shrink-0 flex flex-col gap-2">
               {[
-                { id: 'ioc', title: 'IOC Intelligence', num: '01' },
-                { id: 'dark', title: 'Dark Web Surveillance', num: '02' },
-                { id: 'mitre', title: 'ATT&CK Matrix', num: '03' },
-                { id: 'extended', title: 'Extended Intel', num: '04' },
+                { id: 'ioc',      title: 'IOC Intelligence',     num: '01', tag: 'Core Module' },
+                { id: 'dark',     title: 'Dark Web Surveillance', num: '02', tag: 'Live Crawlers' },
+                { id: 'mitre',    title: 'ATT\u0026CK Matrix',      num: '03', tag: '10,000+ TTPs' },
+                { id: 'extended', title: 'Extended Intel',        num: '04', tag: 'OSINT Crawler' },
               ].map((feature, idx) => (
-                <div 
+                <button
                   key={feature.id}
                   onMouseEnter={() => setActiveFeature(idx)}
-                  className={`px-6 py-5 cursor-pointer rounded-2xl transition-all duration-300 ease-out relative overflow-hidden group ${
-                    activeFeature === idx 
-                      ? 'bg-brand-accent/10 border border-brand-accent/20 shadow-[0_0_20px_rgba(111,66,193,0.1)]' 
-                      : 'border border-transparent hover:bg-white/5'
+                  onClick={() => setActiveFeature(idx)}
+                  className={`group w-full text-left px-5 py-4 rounded-2xl transition-all duration-300 ease-out relative overflow-hidden cursor-pointer ${
+                    activeFeature === idx
+                      ? 'border border-brand-accent/40 shadow-[0_0_30px_rgba(139,61,255,0.15),inset_0_1px_0_rgba(255,255,255,0.05)]'
+                      : 'border border-white/5 hover:border-white/10'
                   }`}
+                  style={activeFeature === idx ? { background: 'linear-gradient(135deg, rgba(139,61,255,0.12) 0%, rgba(139,61,255,0.04) 100%)' } : { background: 'rgba(255,255,255,0.02)' }}
                 >
-                  <div className={`flex flex-col gap-1.5 transition-transform duration-300 ease-out ${activeFeature === idx ? 'translate-x-1' : ''}`}>
-                    <span className={`text-xs font-mono tracking-[0.2em] uppercase font-semibold ${activeFeature === idx ? 'text-brand-accent' : 'text-gray-500 group-hover:text-gray-400'}`}>
-                      {feature.num}
+                  {/* Active accent bar */}
+                  {activeFeature === idx && (
+                    <div className="absolute left-0 top-3 bottom-3 w-[2px] rounded-full bg-brand-accent shadow-[0_0_8px_rgba(139,61,255,0.8)]" />
+                  )}
+                  <div className={`flex items-center justify-between transition-transform duration-300 ${activeFeature === idx ? 'translate-x-1.5' : ''}`}>
+                    <div>
+                      <div className={`text-[10px] font-mono font-bold tracking-[0.25em] uppercase mb-1 ${activeFeature === idx ? 'text-brand-accent' : 'text-gray-600 group-hover:text-gray-500'}`}>
+                        {feature.num}
+                      </div>
+                      <div className={`text-[15px] font-semibold tracking-tight ${activeFeature === idx ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                        {feature.title}
+                      </div>
+                    </div>
+                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md border shrink-0 ml-3 transition-all duration-300 ${
+                      activeFeature === idx
+                        ? 'text-brand-accent border-brand-accent/30 bg-brand-accent/10'
+                        : 'text-gray-600 border-gray-700/50 bg-transparent'
+                    }`}>
+                      {feature.tag}
                     </span>
-                    <h3 className={`text-lg md:text-xl font-medium tracking-tight ${activeFeature === idx ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
-                      {feature.title}
-                    </h3>
+                  </div>
+                </button>
+              ))}
+
+              {/* Bottom stat block */}
+              <div className="mt-4 p-5 rounded-2xl border border-white/5" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                <div className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-3">Platform Stats</div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">Security tools replaced</span>
+                    <span className="text-sm font-bold text-white font-mono">10+</span>
+                  </div>
+                  <div className="w-full h-px bg-brand-border" />
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">Vendors queried</span>
+                    <span className="text-sm font-bold text-white font-mono">93</span>
+                  </div>
+                  <div className="w-full h-px bg-brand-border" />
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">TTPs catalogued</span>
+                    <span className="text-sm font-bold text-white font-mono">10,000+</span>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
 
-            {/* Right: Dynamic Stage (Full Cards) */}
-            <div className="w-full lg:w-8/12 relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center">
+            {/* Right: Feature Panel */}
+            <div className="flex-1 relative min-h-[520px] rounded-3xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+              {/* Ambient glow inside the panel */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none" />
+
               {[
-                { id: 'ioc', Component: IOCIntelligence },
-                { id: 'dark', Component: DarkIntelligence },
-                { id: 'mitre', Component: MITREAttack },
+                { id: 'ioc',      Component: IOCIntelligence },
+                { id: 'dark',     Component: DarkIntelligence },
+                { id: 'mitre',    Component: MITREAttack },
                 { id: 'extended', Component: ExtendedIntelligence },
               ].map((feature, idx) => (
-                <div 
+                <div
                   key={feature.id}
-                  className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center ${activeFeature === idx ? 'opacity-100 scale-100 z-10 translate-y-0' : 'opacity-0 scale-95 -z-10 translate-y-8 pointer-events-none'}`}
+                  className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] p-1 ${activeFeature === idx ? 'opacity-100 scale-100 z-10 translate-y-0' : 'opacity-0 scale-[0.97] -z-10 translate-y-4 pointer-events-none'}`}
                 >
-                  <div className="w-full h-full flex flex-col justify-center">
-                    <feature.Component isTab={true} />
-                  </div>
+                  <feature.Component isTab={true} />
                 </div>
               ))}
             </div>
