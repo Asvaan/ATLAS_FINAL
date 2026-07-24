@@ -350,77 +350,47 @@ export default function App() {
           </div>
 
           {/* Main Interactive Stage */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
 
-            {/* Left Nav — vertical feature selector */}
-            <div className="w-full lg:w-[300px] shrink-0 flex flex-col gap-2">
+            {/* Left Nav — clean borderless list */}
+            <div className="w-full lg:w-[260px] shrink-0 flex flex-col justify-center">
               {[
-                { id: 'ioc',      title: 'IOC Intelligence',     num: '01', tag: 'Core Module' },
-                { id: 'dark',     title: 'Dark Web Surveillance', num: '02', tag: 'Live Crawlers' },
-                { id: 'mitre',    title: 'ATT\u0026CK Matrix',      num: '03', tag: '10,000+ TTPs' },
-                { id: 'extended', title: 'Extended Intel',        num: '04', tag: 'OSINT Crawler' },
+                { id: 'ioc',      title: 'IOC Intelligence',     num: '01' },
+                { id: 'dark',     title: 'Dark Web Surveillance', num: '02' },
+                { id: 'mitre',    title: 'ATT&CK Matrix',        num: '03' },
+                { id: 'extended', title: 'Extended Intel',        num: '04' },
               ].map((feature, idx) => (
                 <button
                   key={feature.id}
                   onMouseEnter={() => setActiveFeature(idx)}
                   onClick={() => setActiveFeature(idx)}
-                  className={`group w-full text-left px-5 py-4 rounded-2xl transition-all duration-300 ease-out relative overflow-hidden cursor-pointer ${
-                    activeFeature === idx
-                      ? 'border border-brand-accent/40 shadow-[0_0_30px_rgba(139,61,255,0.15),inset_0_1px_0_rgba(255,255,255,0.05)]'
-                      : 'border border-white/5 hover:border-white/10'
-                  }`}
-                  style={activeFeature === idx ? { background: 'linear-gradient(135deg, rgba(139,61,255,0.12) 0%, rgba(139,61,255,0.04) 100%)' } : { background: 'rgba(255,255,255,0.02)' }}
+                  className="group w-full text-left py-5 cursor-pointer relative"
                 >
-                  {/* Active accent bar */}
-                  {activeFeature === idx && (
-                    <div className="absolute left-0 top-3 bottom-3 w-[2px] rounded-full bg-brand-accent shadow-[0_0_8px_rgba(139,61,255,0.8)]" />
-                  )}
-                  <div className={`flex items-center justify-between transition-transform duration-300 ${activeFeature === idx ? 'translate-x-1.5' : ''}`}>
-                    <div>
-                      <div className={`text-[10px] font-mono font-bold tracking-[0.25em] uppercase mb-1 ${activeFeature === idx ? 'text-brand-accent' : 'text-gray-600 group-hover:text-gray-500'}`}>
-                        {feature.num}
-                      </div>
-                      <div className={`text-[15px] font-semibold tracking-tight ${activeFeature === idx ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
-                        {feature.title}
-                      </div>
-                    </div>
-                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md border shrink-0 ml-3 transition-all duration-300 ${
-                      activeFeature === idx
-                        ? 'text-brand-accent border-brand-accent/30 bg-brand-accent/10'
-                        : 'text-gray-600 border-gray-700/50 bg-transparent'
-                    }`}>
-                      {feature.tag}
+                  {/* Separator line */}
+                  <div className="absolute top-0 left-0 right-0 h-px bg-white/5" />
+
+                  {/* Active glow bar */}
+                  <div className={`absolute left-[-1px] top-4 bottom-4 w-[2px] rounded-full transition-all duration-500 ${activeFeature === idx ? 'bg-brand-accent opacity-100 shadow-[0_0_12px_rgba(139,61,255,0.9)]' : 'bg-white/10 opacity-0'}`} />
+
+                  <div className={`pl-5 flex items-baseline gap-4 transition-all duration-400 ${activeFeature === idx ? 'translate-x-2' : 'group-hover:translate-x-1'}`}>
+                    <span className={`text-[11px] font-mono font-bold shrink-0 transition-colors duration-300 ${activeFeature === idx ? 'text-brand-accent' : 'text-gray-700 group-hover:text-gray-600'}`}>
+                      {feature.num}
+                    </span>
+                    <span className={`text-base font-semibold tracking-tight transition-colors duration-300 ${activeFeature === idx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
+                      {feature.title}
                     </span>
                   </div>
                 </button>
               ))}
-
-              {/* Bottom stat block */}
-              <div className="mt-4 p-5 rounded-2xl border border-white/5" style={{ background: 'rgba(255,255,255,0.02)' }}>
-                <div className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-3">Platform Stats</div>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500">Security tools replaced</span>
-                    <span className="text-sm font-bold text-white font-mono">10+</span>
-                  </div>
-                  <div className="w-full h-px bg-brand-border" />
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500">Vendors queried</span>
-                    <span className="text-sm font-bold text-white font-mono">93</span>
-                  </div>
-                  <div className="w-full h-px bg-brand-border" />
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500">TTPs catalogued</span>
-                    <span className="text-sm font-bold text-white font-mono">10,000+</span>
-                  </div>
-                </div>
-              </div>
+              {/* Bottom separator */}
+              <div className="h-px bg-white/5" />
             </div>
 
-            {/* Right: Feature Panel */}
-            <div className="flex-1 relative min-h-[520px] rounded-3xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-              {/* Ambient glow inside the panel */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none" />
+            {/* Right: Feature content — fully open, no box wrapper */}
+            <div className="flex-1 relative min-h-[540px]">
+              {/* Soft ambient purple glow — not a container, just atmosphere */}
+              <div className="absolute -top-16 -right-16 w-80 h-80 bg-brand-accent/8 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
               {[
                 { id: 'ioc',      Component: IOCIntelligence },
@@ -430,7 +400,7 @@ export default function App() {
               ].map((feature, idx) => (
                 <div
                   key={feature.id}
-                  className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] p-1 ${activeFeature === idx ? 'opacity-100 scale-100 z-10 translate-y-0' : 'opacity-0 scale-[0.97] -z-10 translate-y-4 pointer-events-none'}`}
+                  className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${activeFeature === idx ? 'opacity-100 scale-100 z-10 translate-y-0' : 'opacity-0 scale-[0.98] -z-10 translate-y-3 pointer-events-none'}`}
                 >
                   <feature.Component isTab={true} />
                 </div>
