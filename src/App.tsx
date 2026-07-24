@@ -455,62 +455,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── Integrations ────────────────────────────────────────── */}
-      <section className="relative py-28 border-b border-brand-border bg-brand-dark overflow-hidden">
-        {/* Ambient radial wash — sits behind the content */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 70% 50% at 70% 50%, rgba(124,45,255,0.045) 0%, transparent 75%)',
-          }}
-        />
-
-        <div className="relative z-10 max-w-5xl mx-auto px-6">
-          {/* Header row */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <div className="lg:col-span-4 text-left">
-              <p className="text-[11px] font-semibold text-brand-accent tracking-[0.2em] uppercase mb-3">Integrations</p>
-              <h2 className="text-3xl font-display font-medium text-white mb-4">
-                Where ATLAS plugs in.
-              </h2>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Native connectors for the tools your team already runs. Custom integrations in 48 hours.
-              </p>
-              {/* Thin accent rule */}
-              <div className="w-12 h-[2px] rounded-full" style={{ background: 'linear-gradient(90deg, #7c2dff 0%, transparent 100%)' }} />
-            </div>
-
-            {/* Integration chips grid */}
-            <div className="lg:col-span-8 relative">
-              <div className="rounded-3xl p-6 lg:p-8 border border-[#231042] bg-gradient-to-br from-[#0f0722] to-[#07030f] shadow-2xl">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {[
-                    { name: 'Splunk',       letter: 'S' },
-                    { name: 'Sentinel',     letter: 'Se' },
-                    { name: 'Chronicle',    letter: 'Ch' },
-                    { name: 'CrowdStrike',  letter: 'Cs' },
-                    { name: 'Elastic',      letter: 'El' },
-                    { name: 'MISP',         letter: 'Mi' },
-                    { name: 'OpenCTI',      letter: 'Oc' },
-                  ].map(({ name, letter }) => (
-                    <div
-                      key={name}
-                      className="group flex items-center gap-2 p-1.5 pr-3 rounded-2xl border border-[#231042] bg-[#0a0414] hover:border-brand-accent/40 hover:bg-[#120826] transition-all duration-300 select-none cursor-default min-w-0"
-                    >
-                      <span
-                        className="shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center text-[11px] font-bold tracking-wide text-[#b484ff] bg-[#1a0b36] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] group-hover:text-white transition-colors"
-                      >
-                        {letter}
-                      </span>
-                      <span className="text-[12px] sm:text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors whitespace-nowrap overflow-visible">{name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── Quarterly Digest ────────────────────────────────────── */}
       <section className="py-24 border-b border-brand-border bg-brand-dark">
