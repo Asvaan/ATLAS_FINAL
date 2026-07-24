@@ -51,12 +51,12 @@ export function DarkText() {
   return (
     <div className="space-y-4">
       <div>
-        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Surveillance & Alerting</span>
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Dark Intelligence</span>
         <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
-          Targeted Keyword Surveillance
+          We monitor thousands of dark web sources.
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed mt-3">
-          Search the entire dark web for specific corporate keywords, assets, or domain names to extract full threat actor leaks and forum records.
+          ATLAS monitors thousands of dark web data sources including dark web marketplaces, using live crawlers. Search by any keyword — a name, email, or company — and surface exposed credentials, lab activity, nicknames, and breach records from across the dark web.
         </p>
       </div>
 
@@ -66,9 +66,9 @@ export function DarkText() {
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Isolated Admin Access</span>
+            <span className="text-xs font-semibold text-white block">Organisation-Scoped Admin Access Only</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Search filters and telemetry records are kept strictly private and not shared globally.
+              Access is restricted to admins and searches are limited to their own organisation — preventing misuse and ensuring compliance.
             </span>
           </div>
         </div>
@@ -78,9 +78,9 @@ export function DarkText() {
             <ShieldAlert className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Deep Web Keyword Queries</span>
+            <span className="text-xs font-semibold text-white block">4,630+ Breaches Found per Query</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Deploy search filters across encrypted message channels, invite-only pastebin dumps.
+              Surfaces exposed credentials, gender, last activity, nicknames and full breach records sourced from dark web marketplace crawlers.
             </span>
           </div>
         </div>
@@ -114,10 +114,10 @@ export default function DarkIntelligence({ isTab = false }: DarkIntelligenceProp
             <EyeOff className="w-3.5 h-3.5" /> Dark Web Intel
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight text-white mb-4">
-            Brand and Identity Surveillance
+            Dark Web Surveillance at Scale
           </h2>
           <p className="text-gray-400 text-base leading-relaxed">
-            Monitor the dark web automatically. Detect exposed enterprise data and brand threats before they become entries in a breach report.
+            ATLAS crawlers monitor thousands of dark web marketplaces in real time. Search by name, email, or company to surface exposed credentials, breach records, and attacker activity — restricted to your organisation only.
           </p>
         </div>
         {content}

@@ -57,12 +57,12 @@ export function MITREText() {
   return (
     <div className="space-y-4">
       <div>
-        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Detection Alignment</span>
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">ATT&CK Intelligence</span>
         <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
-          Adversarial Tactic Mapping
+          10,000+ TTPs mapped. Defensive counter-measures included.
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed mt-3">
-          Consolidate adversarial strategies in a single interface to identify which threat groups are targeting companies in your sector.
+          One of ATLAS's core features — tactics, techniques and procedures mapped from more than 10,000 strategies and combinations. Each entry includes not just the attack technique, but the defensive counter-mechanism to tackle it. Linked directly to the official MITRE mapping page.
         </p>
       </div>
 
@@ -72,9 +72,9 @@ export function MITREText() {
             <Layout className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Strategy Consolidation</span>
+            <span className="text-xs font-semibold text-white block">Unified Multi-Source TTP Matrix</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Combine millions of fragmented signatures into a cohesive matrix.
+              Combines sources from multiple intelligence feeds into a single unified platform, surfacing all TTPs under one umbrella.
             </span>
           </div>
         </div>
@@ -84,9 +84,9 @@ export function MITREText() {
             <Award className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Adversary Attribution</span>
+            <span className="text-xs font-semibold text-white block">Threat Group Profiling by Industry</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Identify specific threat groups targeting organizations in your industry.
+              Enter your sector (e.g. Healthcare) and ATLAS identifies all groups that could target your organisation, including their origin, first seen date, last activity, and full TTP profiles.
             </span>
           </div>
         </div>
@@ -120,10 +120,10 @@ export default function MITREAttack({ isTab = false }: MITREAttackProps) {
             <Grid className="w-3.5 h-3.5" /> ATT&CK Mapping
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight text-white mb-4">
-            Standardized Threat Modeling
+            MITRE ATT&CK Intelligence Mapping
           </h2>
           <p className="text-gray-400 text-base leading-relaxed">
-            Translate alerts into actionable defense plans. Ground your threat hunting operations in industry-standard adversarial tactics.
+            10,000+ TTPs consolidated from multiple sources into one platform. Each technique comes with defensive counter-mechanisms and direct links to the official MITRE mapping page. Enter your industry to automatically surface every threat group targeting your sector.
           </p>
         </div>
         {content}

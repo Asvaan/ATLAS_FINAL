@@ -56,12 +56,12 @@ export function IOCText() {
   return (
     <div className="space-y-6">
       <div>
-        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Feature Spotlight</span>
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">IOC Intelligence</span>
         <h3 className="text-2xl md:text-3xl font-sans font-semibold text-white tracking-tight leading-snug">
-          Unrestricted Indicator Triage
+          Paste any IOC. Get results in 5 seconds.
         </h3>
         <p className="text-gray-400 text-sm md:text-base leading-relaxed mt-3">
-          Scan hashes, IP addresses, and domains without volume limits. ATLAS traverses global intelligence feeds and local threat vaults to determine indicator reputation and map payload execution risks.
+          Place any kind of IOC — a domain, an IP, or a hash — and ATLAS traverses all security resources simultaneously. No need to specify the indicator type. Results are classified as malicious or not within seconds, analyzed across 93+ global security vendors.
         </p>
       </div>
 
@@ -71,9 +71,9 @@ export function IOCText() {
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Unlimited Resource Traversals</span>
+            <span className="text-sm font-semibold text-white block">Multi-Vendor Cross-Reference</span>
             <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Query all security resources simultaneously to identify malicious artifacts, file behaviors, and network connections.
+              Analyzed by 93 security vendors simultaneously — results include a full list of every vendor that classified the indicator as malicious, and are fully exportable.
             </span>
           </div>
         </div>
@@ -83,9 +83,9 @@ export function IOCText() {
             <Activity className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Secure Local AI Summaries</span>
+            <span className="text-sm font-semibold text-white block">On-Premise AI Analysis via Threat Core</span>
             <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Generate instant intelligence briefs using local, on-premise LLMs. Complete data privacy is guaranteed as no scan data exits your network.
+              AI summaries are tailored per team in JSON format for easy automation and fine-tuning. Our ML models run on a private server — no scan data ever leaves your network.
             </span>
           </div>
         </div>
@@ -119,10 +119,10 @@ export default function IOCIntelligence({ isTab = false }: IOCProps) {
             <Cpu className="w-3.5 h-3.5" /> Indicator Triage
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight text-white mb-4">
-            Automated Alert Verification
+            Unified IOC Triage in Under 5 Seconds
           </h2>
           <p className="text-gray-400 text-base leading-relaxed">
-            Eliminate triage delays. Accelerate incident containment by validating alerts against real-world reputation engines automatically.
+            Drop any indicator — hash, IP, or domain — and ATLAS automatically queries 93+ global intelligence vendors, classifies the threat, and delivers AI-powered summaries tailored to your team. Replacing fragmented toolchains with one unified workflow.
           </p>
         </div>
         {content}

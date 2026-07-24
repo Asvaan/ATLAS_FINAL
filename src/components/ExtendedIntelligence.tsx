@@ -66,12 +66,12 @@ export function ExtendedText() {
   return (
     <div className="space-y-4">
       <div>
-        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Extended Search</span>
+        <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Extended Intelligence</span>
         <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
-          Web & Darknet OSINT Crawler
+          Keyword-based dark web crawler with AI deduplication.
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed mt-3">
-          Deploy recursive web crawlers to scan hidden darknet marketplaces, pastebins, and compile structured lists of compromised assets.
+          Add any keyword — a company name, a brand, or a domain — and ATLAS crawlers scrape dark web databases to find every relevant mention. The fine-tuned AI deduplicates results and surfaces only the most optimal matches, returning up to 70+ structured results per query.
         </p>
       </div>
 
@@ -81,9 +81,9 @@ export function ExtendedText() {
             <Globe className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Multi-Layer Web Scanning</span>
+            <span className="text-xs font-semibold text-white block">AI-Powered Deduplication</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Query standard index sites and hidden service links.
+              The fine-tuned model goes through all fields, detects duplicates, and returns only the most optimal and relevant results from the crawl.
             </span>
           </div>
         </div>
@@ -93,9 +93,9 @@ export function ExtendedText() {
             <ExternalLink className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Compromised Domain Aggregation</span>
+            <span className="text-xs font-semibold text-white block">Multi-Keyword Parallel Crawling</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Generate structured URL reports for indexed host matches.
+              Run multiple keywords simultaneously (e.g. your company name, a partner brand, Google) and receive consolidated structured results from across dark web databases.
             </span>
           </div>
         </div>
@@ -129,10 +129,10 @@ export default function ExtendedIntelligence({ isTab = false }: ExtendedProps) {
             <Search className="w-3.5 h-3.5" /> Extended Intel
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight text-white mb-4">
-            Extended Web Intelligence
+            Extended Intelligence Pathway
           </h2>
           <p className="text-gray-400 text-base leading-relaxed">
-            Consolidate unstructured OSINT. Automatically map web mentions and compromised assets using dynamic threat indexes.
+            Add any keyword and our crawlers scan dark web databases for matching content. Fine-tuned AI deduplicates results across all fields, delivering the most relevant structured matches — up to 70+ results per query.
           </p>
         </div>
         {content}
