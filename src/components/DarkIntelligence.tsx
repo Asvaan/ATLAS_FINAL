@@ -53,10 +53,10 @@ export function DarkText() {
       <div>
         <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Dark Intelligence</span>
         <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
-          We monitor thousands of dark web sources.
+          Live dark web & marketplace surveillance.
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed mt-3">
-          ATLAS monitors thousands of dark web data sources including dark web marketplaces, using live crawlers. Search by any keyword — a name, email, or company — and surface exposed credentials, lab activity, nicknames, and breach records from across the dark web.
+          Deploy live crawlers across thousands of dark web marketplaces and forums. Query keywords such as names or emails to instantly uncover exposed credentials, lab activity, nicknames, gender info, and breach records.
         </p>
       </div>
 
@@ -66,9 +66,9 @@ export function DarkText() {
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Organisation-Scoped Admin Access Only</span>
+            <span className="text-xs font-semibold text-white block">Strict Admin & Organisation Scoping</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Access is restricted to admins and searches are limited to their own organisation — preventing misuse and ensuring compliance.
+              Access is restricted strictly to admins and scoped exclusively to searches relevant to their own organization.
             </span>
           </div>
         </div>
@@ -78,9 +78,9 @@ export function DarkText() {
             <ShieldAlert className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">4,630+ Breaches Found per Query</span>
+            <span className="text-xs font-semibold text-white block">Deep Leak & Breach Extraction</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Surfaces exposed credentials, gender, last activity, nicknames and full breach records sourced from dark web marketplace crawlers.
+              Surfaces detailed breach records (such as 4,630+ breaches found on sample queries) including credential dumps, nicknames, and user activity.
             </span>
           </div>
         </div>

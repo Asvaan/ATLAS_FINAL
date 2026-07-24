@@ -59,10 +59,10 @@ export function MITREText() {
       <div>
         <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">ATT&CK Intelligence</span>
         <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
-          10,000+ TTPs mapped. Defensive counter-measures included.
+          10,000+ TTP strategies with defensive countermeasures.
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed mt-3">
-          One of ATLAS's core features — tactics, techniques and procedures mapped from more than 10,000 strategies and combinations. Each entry includes not just the attack technique, but the defensive counter-mechanism to tackle it. Linked directly to the official MITRE mapping page.
+          A core MVP feature mapping over 10,000 strategy combinations. ATLAS unifies multiple threat feeds under one umbrella, providing tactical execution details, defensive counter-mechanisms, and direct links to official MITRE pages.
         </p>
       </div>
 
@@ -72,9 +72,9 @@ export function MITREText() {
             <Layout className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Unified Multi-Source TTP Matrix</span>
+            <span className="text-xs font-semibold text-white block">Industry-Specific Threat Group Mapping</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Combines sources from multiple intelligence feeds into a single unified platform, surfacing all TTPs under one umbrella.
+              Input your sector (e.g., Healthcare) to discover threat groups targeting your industry — including origin, first seen date, last activity, threat level, and full TTP mapping (e.g., Fox Kitten).
             </span>
           </div>
         </div>
@@ -84,9 +84,9 @@ export function MITREText() {
             <Award className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Threat Group Profiling by Industry</span>
+            <span className="text-xs font-semibold text-white block">Actionable Defensive Mechanisms</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Enter your sector (e.g. Healthcare) and ATLAS identifies all groups that could target your organisation, including their origin, first seen date, last activity, and full TTP profiles.
+              Beyond identifying tactics and procedures, ATLAS generates concrete defensive countermeasures to neutralize specific threat actor behaviors.
             </span>
           </div>
         </div>

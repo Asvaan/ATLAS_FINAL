@@ -68,10 +68,10 @@ export function ExtendedText() {
       <div>
         <span className="text-[10px] font-semibold text-brand-accent tracking-[0.16em] uppercase mb-1.5 block">Extended Intelligence</span>
         <h3 className="text-xl md:text-2xl font-sans font-semibold text-white tracking-tight leading-snug">
-          Keyword-based dark web crawler with AI deduplication.
+          Keyword OSINT crawlers with AI field deduplication.
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed mt-3">
-          Add any keyword — a company name, a brand, or a domain — and ATLAS crawlers scrape dark web databases to find every relevant mention. The fine-tuned AI deduplicates results and surfaces only the most optimal matches, returning up to 70+ structured results per query.
+          Input custom keywords — company names (e.g., ParityBit Security), sector assets (Energy), or domains (Google). ATLAS crawlers scrape dark web databases, while fine-tuned AI evaluates fields and prunes duplicates to deliver up to 70+ optimal results.
         </p>
       </div>
 
@@ -81,9 +81,9 @@ export function ExtendedText() {
             <Globe className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">AI-Powered Deduplication</span>
+            <span className="text-xs font-semibold text-white block">Fine-Tuned AI Field Deduplication</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              The fine-tuned model goes through all fields, detects duplicates, and returns only the most optimal and relevant results from the crawl.
+              Scrapes across multiple fields and filters out duplicate records automatically to surface only high-value, actionable intelligence.
             </span>
           </div>
         </div>
@@ -93,9 +93,9 @@ export function ExtendedText() {
             <ExternalLink className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-xs font-semibold text-white block">Multi-Keyword Parallel Crawling</span>
+            <span className="text-xs font-semibold text-white block">Single-Platform Consolidated Workflow</span>
             <span className="text-[11px] text-gray-500 mt-0.5 block leading-relaxed">
-              Run multiple keywords simultaneously (e.g. your company name, a partner brand, Google) and receive consolidated structured results from across dark web databases.
+              Replaces fragmented manual searches by unifying keyword scraping, OSINT crawling, and AI parsing under one threat intelligence roof.
             </span>
           </div>
         </div>

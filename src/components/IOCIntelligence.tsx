@@ -61,7 +61,7 @@ export function IOCText() {
           Paste any IOC. Get results in 5 seconds.
         </h3>
         <p className="text-gray-400 text-sm md:text-base leading-relaxed mt-3">
-          Place any kind of IOC — a domain, an IP, or a hash — and ATLAS traverses all security resources simultaneously. No need to specify the indicator type. Results are classified as malicious or not within seconds, analyzed across 93+ global security vendors.
+          Input any indicator — IP address, domain, or hash — without needing to specify the type. ATLAS queries 93+ global security vendors simultaneously and classifies the indicator as malicious or benign within 5 seconds, replacing 10+ daily SOC tools.
         </p>
       </div>
 
@@ -71,9 +71,9 @@ export function IOCText() {
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">Multi-Vendor Cross-Reference</span>
+            <span className="text-sm font-semibold text-white block">Multi-Vendor Analysis & Export</span>
             <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              Analyzed by 93 security vendors simultaneously — results include a full list of every vendor that classified the indicator as malicious, and are fully exportable.
+              View detailed breakdowns of every vendor that flagged the indicator as malicious. All scan results are fully exportable.
             </span>
           </div>
         </div>
@@ -83,9 +83,9 @@ export function IOCText() {
             <Activity className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-white block">On-Premise AI Analysis via Threat Core</span>
+            <span className="text-sm font-semibold text-white block">Threat Core & Private AI Summaries</span>
             <span className="text-sm text-gray-500 mt-1 block leading-relaxed">
-              AI summaries are tailored per team in JSON format for easy automation and fine-tuning. Our ML models run on a private server — no scan data ever leaves your network.
+              Export response data in JSON for fine-tuning and automation. AI analysis provides team-tailored impact assessments and recommendations, hosted entirely on on-premise private servers so zero data leaves your network.
             </span>
           </div>
         </div>
